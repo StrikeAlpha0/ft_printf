@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_atoif.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/18 19:29:01 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/22 15:56:54 by msharpe          ###   ########.fr       */
+/*   Created: 2017/11/27 13:13:58 by msharpe           #+#    #+#             */
+/*   Updated: 2018/01/22 17:41:40 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void		ft_putnbr(long n, t_inputinfo *info, t_passinfo *pass)
+float long		ft_atoif(const char *str)
 {
-	info->f = 0;
-	ft_frontloadflag(n, info, pass);
-	ft_putnbrup(n);
-	ft_backloadflag(n, info, pass);
+	int i;
+	float long num;
+	int sign;
+
+	i = 0;
+	num = 0;
+	sign = 1;
+	if (*(str + i) == '-')
+		sign = -1;
+	while (*(str + i) && *(str + i) >= '0' && *(str + i) <= '9')
+		num = num * 10 + (*(str + i++) - '0');
+	if (*(str + i) == '.')
+		num = num * 10 + (*(str + i++) - '0');
+	while (*(str + i) && *(str + i) >= '0' && *(str + i) <= '9')
+		num = num * 10 + (*(str + i++) - '0'); 
+	return (num * sign);
 }

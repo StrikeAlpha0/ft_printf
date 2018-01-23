@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putfloat.c                                      :+:      :+:    :+:   */
+/*   ft_frontloadflagfloat.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/21 17:12:03 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/22 18:36:27 by msharpe          ###   ########.fr       */
+/*   Created: 2018/01/22 15:59:46 by msharpe           #+#    #+#             */
+/*   Updated: 2018/01/22 16:53:36 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libftprintf.h"
-
-void		ft_putfloat(long float nbr, t_inputinfo *info, t_passinfo *pass)
+#include "libftprintf.h"
+//numlen needs floating version
+void	ft_frontloadflagfloat(float long n, t_inputinfo *info, t_passinfo *pass)
 {
-	info->f = 0;
 	if (info->flag[info->f] == '+')
 	{
-		ft_flag_plus(nbr, info, pass);
+		ft_flag_plus(n, info, pass);
 		info->f++;
 	}
-	if (nbr < 0)
+	if (n < 0)
 	{
 		ft_putchar('-');
-		nbr = -nbr;
-		pass->numlen = ft_numlen(nbr) + 1;
+		n = -n;
+		pass->numlen = ft_numlen(n) + 1;
 	}
 	else
-		pass->numlen = ft_numlen(nbr);
+		pass->numlen = ft_numlen(n);
 	if (info->flag[info->f] == ' ')
 	{
-		ft_flag_zero(nbr, info, pass);
+		ft_flag_space(n, info, pass);
 		info->f++;
 	}
-	ft_putnbrf(nbr);
-	if (info->flag[info->f] == '_')
+	if (info->flag[info->f] == '0')
 	{
-		pass->strlen = -1;
-		ft_flag_minus(nbr, info, pass);
+		ft_flag_zero(n, info, pass);
+		info->f++;
 	}
 }

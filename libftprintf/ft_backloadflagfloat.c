@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbrf.c                                       :+:      :+:    :+:   */
+/*   ft_backloadflagfloat.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/21 17:55:50 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/22 18:32:06 by msharpe          ###   ########.fr       */
+/*   Created: 2018/01/22 16:55:16 by msharpe           #+#    #+#             */
+/*   Updated: 2018/01/22 17:05:35 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void		ft_putnbrf(long float n, t_inputinfo *info, t_passinfo *pass)
+void		ft_backloadflagfloat(long n, t_inputinfo *info, t_passinfo *pass)
 {
-	if (n > 9)
+	if (info->flag[info->f] == '-')
 	{
-		ft_putnbrf(n / 10);
-		ft_putnbrf(n % 10);
+		pass->strlen = -1;
+		ft_flag_minus(n, info, pass);
+		info->f++;
 	}
-	else
-		ft_putchar(n + '0');
-
-
+	if (info->flag[info->f] == '.')
+	{
+		ft_flag_zero(n, info, pass);
+		info->f++;
+	}	
+}

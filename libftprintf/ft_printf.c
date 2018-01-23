@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/22 11:50:40 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/22 20:14:37 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,21 @@
 ** F:convert/print upper(?) float, c:print char, C:print wide char,
 ** s:print string, S:print wide string, p:print address, %:print a %
 */
+
+/* 
+** D-print long ints(Currently has predicted output/ SysPrintf returns
+** unsigned int however?
+*/
+/*
 void		wub(void)
 {
-	ft_putchar('X')
+	ft_putchar('X');
 }
-
+*/
 t_printf_struct g_spec_table[] =
 {
 	{'d', ft_per_doi},
-	{'D', ft_per_dup}, /*print long ints(Currently has predicted output. APrintf returns unsigned int instead?*/
+	{'D', ft_per_dup},
 	{'i', ft_per_doi},
 	{'u', ft_per_u},
 	{'U', ft_per_uup},
@@ -36,21 +42,21 @@ t_printf_struct g_spec_table[] =
 	{'O', ft_per_oup},
 	{'x', ft_per_x},
 	{'X', ft_per_xup},
-	{'f', ft_per_f},
-	{'F', ft_per_f},
-	{'e', wub},
-	{'E', wub},
-	{'g', wub},
-	{'G', wub},
-	{'a', wub},
-	{'A', wub},
+//	{'f', ft_per_f},
+//	{'F', ft_per_f},
+//	{'e', wub},
+//	{'E', wub},
+//	{'g', wub},
+//	{'G', wub},
+//	{'a', wub},
+//	{'A', wub},
 	{'c', ft_per_c},
 	{'C', ft_per_c},
 	{'s', ft_per_s},
 	{'S', ft_per_s},
-	{'p', ft_per_p}, 
-	{'n', wub},
-	{'%', ft_per_per} /*prints percent sign*/
+//	{'p', ft_per_p},
+//	{'n', wub},
+	{'%', ft_per_per}
 };
 /*
 ** Suffix addition of spaces, prefix addition of +/-, prefix:space,
@@ -65,7 +71,7 @@ t_printfflag_struct g_flag_table[] =
 	{'0', ft_flag_zero}
 };
 
-static void		spec_table(char search, va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
+static void		spec_table(va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
 {
 	info->tsearch = 0;
 	while (format[info->i] != g_spec_table[info->tsearch].name && g_spec_table[info->tsearch].name != '\0')
@@ -82,7 +88,7 @@ static void		spec_table(char search, va_list *list, const char *format, t_inputi
 	return;
 }
 
-static void		search_width(char search, va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
+static void		search_width(va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
 {
 	if (format[info->i] >= '1' && format[info->i] <= '9')
 	{
@@ -90,7 +96,7 @@ static void		search_width(char search, va_list *list, const char *format, t_inpu
 		while (format[info->i] >= '0' && format[info->i] <= '9')
 			info->i++;
 	}
-	spec_table(search, list, format, info, pass);
+	spec_table(list, format, info, pass);
 	return;
 }
 
@@ -105,7 +111,7 @@ static void 	search_specs(char search, va_list *list, const char *format, t_inpu
 		info->i++;
 		search_specs(search, list, format, info, pass);
 	}
-	search_width(search, list, format, info, pass);
+	search_width(list, format, info, pass);
 	return;
 }
 
