@@ -6,14 +6,15 @@
 #    By: msharpe <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/21 13:37:09 by msharpe           #+#    #+#              #
-#    Updated: 2018/01/22 18:37:20 by msharpe          ###   ########.fr        #
+#    Updated: 2018/01/22 20:48:16 by msharpe          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FILENAMES	= ft_atoi.c ft_bzero.c ft_numlen.c ft_print_hex.c ft_print_hexup.c\
 			  	ft_print_octal.c ft_printf.c ft_putchar.c ft_putnbr.c\
 				ft_putnbrup.c ft_putstr.c initializefunc.c printfconvert.c\
-				printfflags.c printfnumbers.c printfwriter.c
+				printfflags.c printfnumbers.c printfwriter.c\
+				ft_frontloadflags.c ft_backloadflags.c
 				  
 
 NAME		= libftprintf.a
