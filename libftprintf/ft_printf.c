@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/23 20:46:50 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/23 20:48:19 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void		wub(void)
 t_printf_struct g_spec_table[] =
 {
 	{'d', ft_per_doi},
-	{'D', ft_per_doi},
+	{'D', ft_per_dup},
 	{'i', ft_per_doi},
 	{'u', ft_per_u},
 	{'U', ft_per_uup},
