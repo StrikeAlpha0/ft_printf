@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/23 20:42:00 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/23 20:46:50 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void		wub(void)
 t_printf_struct g_spec_table[] =
 {
 	{'d', ft_per_doi},
-	{'D', ft_per_dup},
+	{'D', ft_per_doi},
 	{'i', ft_per_doi},
 	{'u', ft_per_u},
 	{'U', ft_per_uup},
@@ -138,18 +138,18 @@ int		ft_printf(const char *format, ...)
 	va_start(list, format);
 	while (format[input.i] != '\0')
 	{
-//		if(format[input.i] == '%')
-//		{
-//			input.i++;
-//			input.search = format[input.i + input.x];
-//			search_specs(input.search, &list, format, &input, &pass);
-//			reset(&input, &pass);
-//		}
-//		else
-//		{
+		if(format[input.i] == '%')
+		{
+			input.i++;
+			input.search = format[input.i + input.x];
+			search_specs(input.search, &list, format, &input, &pass);
+			reset(&input, &pass);
+		}
+		else
+		{
 			ft_putchar(format[input.i]);
 			input.i++;
-//		}
+		}
 	}
 	va_end (list);
 	return (0);
