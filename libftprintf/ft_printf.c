@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/23 20:48:19 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/23 22:00:17 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,16 +75,13 @@ static void		spec_table(va_list *list, const char *format, t_inputinfo *info, t_
 {
 	info->tsearch = 0;
 	while (format[info->i] != g_spec_table[info->tsearch].name && g_spec_table[info->tsearch].name != '\0')
-	{
 		info->tsearch++;
-	}
 	if(format[info->i] == g_spec_table[info->tsearch].name && g_spec_table[info->tsearch].name != '\0')
-	{
 		g_spec_table[info->tsearch].function(list, info, pass);
-	}
 	else
 		ft_putchar(format[info->i]);
-	info->i++;
+/**/	info->i++;
+/**/	info->i++;
 	return;
 }
 
@@ -100,7 +97,7 @@ static void		search_width(va_list *list, const char *format, t_inputinfo *info, 
 	return;
 }
 
-static void 	search_specs(char search, va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
+static void 	search_specs(va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
 {
 	while (format[info->i] != g_flag_table[info->tsearch].name && g_flag_table[info->tsearch].name != '\0')
 		info->tsearch++;
@@ -109,7 +106,7 @@ static void 	search_specs(char search, va_list *list, const char *format, t_inpu
 		info->flag[info->f] = format[info->i];
 		info->f++;
 		info->i++;
-		search_specs(search, list, format, info, pass);
+		search_specs(list, format, info, pass);
 	}
 	search_width(list, format, info, pass);
 	return;
@@ -125,6 +122,7 @@ static void		reset(t_inputinfo *info, t_passinfo *pass)
 	pass->width = 0;
 	info->f = 0;
 	ft_bzero(info->flag, 10);
+	info->tsearch = 0;
 }
 
 int		ft_printf(const char *format, ...)
@@ -141,8 +139,8 @@ int		ft_printf(const char *format, ...)
 		if(format[input.i] == '%')
 		{
 			input.i++;
-			input.search = format[input.i + input.x];
-			search_specs(input.search, &list, format, &input, &pass);
+			input.search = format[input.i];
+			search_specs(&list, format, &input, &pass);
 			reset(&input, &pass);
 		}
 		else
