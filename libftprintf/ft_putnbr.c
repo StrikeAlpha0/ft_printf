@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 19:29:01 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/23 21:01:48 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/23 21:27:44 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,10 @@ void		ft_putnbr(long n, t_inputinfo *info, t_passinfo *pass)
 		pass->numlen = ft_numlen(n);
 	ft_frontloadflag(n, info, pass);
 	ft_putnbrup(n);
-	ft_backloadflag(n, info, pass);
+	if (info->flag[info->f == '-'])
+	{
+		pass->strlen = -1;
+		ft_flag_minus(n, info, pass);
+		info->f++;
+	}
 }
