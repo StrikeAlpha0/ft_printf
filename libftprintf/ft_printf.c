@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/23 22:00:17 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/24 18:47:50 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,13 +76,11 @@ static void		spec_table(va_list *list, const char *format, t_inputinfo *info, t_
 	info->tsearch = 0;
 	while (format[info->i] != g_spec_table[info->tsearch].name && g_spec_table[info->tsearch].name != '\0')
 		info->tsearch++;
-	if(format[info->i] == g_spec_table[info->tsearch].name && g_spec_table[info->tsearch].name != '\0')
+	if (format[info->i] == g_spec_table[info->tsearch].name && g_spec_table[info->tsearch].name != '\0')
 		g_spec_table[info->tsearch].function(list, info, pass);
 	else
 		ft_putchar(format[info->i]);
-/**/	info->i++;
-/**/	info->i++;
-	return;
+	info->i++;
 }
 
 static void		search_width(va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
@@ -94,29 +92,34 @@ static void		search_width(va_list *list, const char *format, t_inputinfo *info, 
 			info->i++;
 	}
 	spec_table(list, format, info, pass);
-	return;
 }
 
 static void 	search_specs(va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
 {
-	while (format[info->i] != g_flag_table[info->tsearch].name && g_flag_table[info->tsearch].name != '\0')
-		info->tsearch++;
-	if(format[info->i] == g_flag_table[info->tsearch].name)
+	while (format[info->i] != g_spec_table[info->tsearch].name && format[info->i] != g_spec_table['\0'].name)
 	{
-		info->flag[info->f] = format[info->i];
-		info->f++;
-		info->i++;
-		search_specs(list, format, info, pass);
+		while (format[info->i] != g_flag_table[info->tsearch].name && g_flag_table[info->tsearch].name != '\0')
+			info->tsearch++;
+		if(format[info->i] == g_flag_table[info->tsearch].name && g_flag_table[info->tsearch].name != '\0')
+		{
+			info->flag[info->f] = format[info->i];
+			info->f++;
+			info->i++;
+		}
+		if (format[info->i] >= '0' && format[info->i] <= '9')
+			search_width(list, format, info, pass);
+		else
+			return ;
 	}
-	search_width(list, format, info, pass);
-	return;
 }
 
-/*static void		special_mod(.........)
+/*
+static void		special_mod(.........)
 {
 
 }
 */
+
 static void		reset(t_inputinfo *info, t_passinfo *pass)
 {
 	pass->width = 0;
