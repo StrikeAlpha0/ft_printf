@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/22 15:48:38 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/22 15:56:30 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/25 14:02:24 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,15 @@
 
 void			ft_backloadflag(long n, t_inputinfo *info, t_passinfo *pass)
 {
-	if (info->flag[info->f] == '-')
+	info->f = 0;
+	while (info->flag[info->f] != '\0')
 	{
-		pass->strlen = -1;
-		ft_flag_minus(n, info, pass);
-		info->f++;
+		if (info->flag[info->f] == '-')
+		{
+			pass->strlen = -1;
+			ft_flag_minus(n, info, pass);
+			info->f++;
+		}
 	}
 }
 
