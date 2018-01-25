@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/22 15:27:37 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/24 22:44:32 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/25 00:11:15 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 
 void			ft_frontloadflag(long n, t_inputinfo *info, t_passinfo *pass)
 {
+	pass->numlen = ft_numlen(n);
 	if (info->flag[info->f] == '+')
 	{
 		ft_flag_plus(n, info, pass);
 		info->f++;
+
 	}
 	if (n < 0)
 	{
 		ft_putchar('-');
 		n = -n;
-		pass->numlen = ft_numlen(n) + 1;
+		pass->numlen++;
 	}
-	else
-		pass->numlen = ft_numlen(n);
 	if (info->flag[info->f] == ' ')
 	{
 		ft_flag_space(n, info, pass);

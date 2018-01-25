@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 00:13:59 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/24 22:06:55 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/24 23:45:32 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void			ft_flag_plus(long n, t_inputinfo *info, t_passinfo *pass)
 {
 	if (n >= 0)
 		ft_putchar('+');
+	pass->numlen++;
 	info->count++;
 	pass->count++;
 }
