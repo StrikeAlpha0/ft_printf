@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 23:09:03 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/22 20:25:56 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/24 23:00:06 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void		ft_per_s(va_list *list, t_inputinfo *info, t_passinfo *pass)
 {
+	pass->numlen = -1;
 	ft_putstr(va_arg(*list, char *), info, pass);
 }
 
