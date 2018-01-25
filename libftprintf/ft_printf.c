@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/24 18:47:50 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/24 21:20:26 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ static void		spec_table(va_list *list, const char *format, t_inputinfo *info, t_
 
 static void		search_width(va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
 {
+	if (info->x == 1)
+		return ;
 	if (format[info->i] >= '1' && format[info->i] <= '9')
 	{
 		pass->width = ft_atoi(format + info->i);
@@ -96,21 +98,17 @@ static void		search_width(va_list *list, const char *format, t_inputinfo *info, 
 
 static void 	search_specs(va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
 {
-	while (format[info->i] != g_spec_table[info->tsearch].name && format[info->i] != g_spec_table['\0'].name)
+	while (format[info->i] != g_flag_table[info->tsearch].name && g_flag_table[info->tsearch].name != '\0')
+		info->tsearch++;
+	if(format[info->i] == g_flag_table[info->tsearch].name && g_flag_table[info->tsearch].name != '\0')
 	{
-		while (format[info->i] != g_flag_table[info->tsearch].name && g_flag_table[info->tsearch].name != '\0')
-			info->tsearch++;
-		if(format[info->i] == g_flag_table[info->tsearch].name && g_flag_table[info->tsearch].name != '\0')
-		{
 			info->flag[info->f] = format[info->i];
 			info->f++;
 			info->i++;
-		}
-		if (format[info->i] >= '0' && format[info->i] <= '9')
-			search_width(list, format, info, pass);
-		else
-			return ;
+			search_specs(list, format, info, pass);
+			info->x = 1;
 	}
+	search_width(list, format, info, pass);
 }
 
 /*
@@ -126,6 +124,7 @@ static void		reset(t_inputinfo *info, t_passinfo *pass)
 	info->f = 0;
 	ft_bzero(info->flag, 10);
 	info->tsearch = 0;
+	info->x = 0;
 }
 
 int		ft_printf(const char *format, ...)
