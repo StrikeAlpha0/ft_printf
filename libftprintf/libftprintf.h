@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 18:06:27 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/25 13:42:19 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/25 14:09:18 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ void			ft_per_u(va_list *list, t_inputinfo *info, t_passinfo *pass);
 */
 
 void			ft_frontloadflag(long n, t_inputinfo *info, t_passinfo *pass);
-void			ft_midloadflag(long n, t_inputinfo *info, t_passinfo *pass);
+//void			ft_midloadflag(long n, t_inputinfo *info, t_passinfo *pass);
 void			ft_backloadflag(long n, t_inputinfo *info, t_passinfo *pass);
 //void			ft_frontflagfloat(float long n, t_inputinfo *info, t_passinfo *pass);
 //void			ft_backloadflagfloat(float long n, t_inputinfo *info, t_passinfo *pass);
