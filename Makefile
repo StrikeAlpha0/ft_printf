@@ -6,7 +6,7 @@
 #    By: msharpe <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/21 13:37:09 by msharpe           #+#    #+#              #
-#    Updated: 2018/01/22 20:51:05 by msharpe          ###   ########.fr        #
+#    Updated: 2018/01/25 13:46:42 by msharpe          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ FILENAMES	= ft_atoi.c ft_bzero.c ft_numlen.c ft_print_hex.c ft_print_hexup.c\
 			  	ft_print_octal.c ft_printf.c ft_putchar.c ft_putnbr.c\
 				ft_putnbrup.c ft_putstr.c initializefunc.c printfconvert.c\
 				printfflags.c printfnumbers.c printfwriter.c\
-				ft_frontloadflag.c ft_backloadflag.c
+				ft_frontloadflag.c ft_midloadflag.c ft_backloadflag.c
 				  
 
 NAME		= libftprintf.a
