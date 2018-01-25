@@ -6,31 +6,33 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 00:13:59 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/24 23:45:32 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/25 12:39:45 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
+
+
 void			ft_flag_plus(long n, t_inputinfo *info, t_passinfo *pass)
 {
 	if (n >= 0)
+	{
 		ft_putchar('+');
-	pass->numlen++;
-	info->count++;
+		pass->numlen++;
+	}
+	info->switch1++;
 	pass->count++;
 }
 
 void			ft_flag_space(long n, t_inputinfo *info, t_passinfo *pass)
 {
-	if (pass->numlen < pass->width)
+	if (n > 0 && info->switch1 == 0 && pass->numlen < pass->width)
 	{
-		while (pass->numlen < pass->width)
-		{
 			ft_putchar(' ');
 			pass->numlen++;
 			n = n;
-		}
+			info->switch1++;
 	}
 	info->count++;
 }

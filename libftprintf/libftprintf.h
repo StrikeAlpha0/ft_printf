@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 18:06:27 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/24 22:07:28 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/25 12:35:05 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct	s_inputinfo
 	int			f;
 	int			x;
 	int			count;
+	int			switch1;
 }				t_inputinfo;
 
 typedef	struct	s_printf_struct
