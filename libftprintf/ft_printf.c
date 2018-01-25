@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf2.c                                       :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/24 21:20:26 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/24 22:03:37 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ static void		spec_table(va_list *list, const char *format, t_inputinfo *info, t_
 
 static void		search_width(va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
 {
-	if (info->x == 1)
+	if (info->x >= 1)
 		return ;
 	if (format[info->i] >= '1' && format[info->i] <= '9')
 	{

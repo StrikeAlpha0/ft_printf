@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 18:06:27 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/22 18:39:19 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/24 22:07:28 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ typedef	struct	s_printf_struct
 typedef struct	s_printfflag_struct
 {
 	char		name;
-	void		(*function)(int n, t_inputinfo *info, t_passinfo *pass);
+	void		(*function)(long n, t_inputinfo *info, t_passinfo *pass);
 }				t_printfflag_struct;
 
 int				ft_printf(const char *format, ...);
@@ -83,11 +83,11 @@ void			ft_per_oup(va_list *list, t_inputinfo *info, t_passinfo *pass);
 ** flags
 */
 
-void			ft_flag_plus(int n, t_inputinfo *info, t_passinfo *pass);
-void			ft_flag_space(int n, t_inputinfo *info, t_passinfo *pass);
-void			ft_flag_minus(int n, t_inputinfo *info, t_passinfo *pass);
-void			ft_flag_zero(int n, t_inputinfo	*info, t_passinfo *pass);
-void			ft_flag_hash(int n, t_inputinfo *info, t_passinfo *pass);
+void			ft_flag_plus(long n, t_inputinfo *info, t_passinfo *pass);
+void			ft_flag_space(long n, t_inputinfo *info, t_passinfo *pass);
+void			ft_flag_minus(long n, t_inputinfo *info, t_passinfo *pass);
+void			ft_flag_zero(long n, t_inputinfo	*info, t_passinfo *pass);
+void			ft_flag_hash(long n, t_inputinfo *info, t_passinfo *pass);
 
 /*
 ** writer

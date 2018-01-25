@@ -6,13 +6,13 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 00:13:59 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/24 09:45:26 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/24 22:06:55 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void			ft_flag_plus(int n, t_inputinfo *info, t_passinfo *pass)
+void			ft_flag_plus(long n, t_inputinfo *info, t_passinfo *pass)
 {
 	if (n >= 0)
 		ft_putchar('+');
@@ -20,7 +20,7 @@ void			ft_flag_plus(int n, t_inputinfo *info, t_passinfo *pass)
 	pass->count++;
 }
 
-void			ft_flag_space(int n, t_inputinfo *info, t_passinfo *pass)
+void			ft_flag_space(long n, t_inputinfo *info, t_passinfo *pass)
 {
 	if (pass->numlen < pass->width)
 	{
@@ -34,7 +34,7 @@ void			ft_flag_space(int n, t_inputinfo *info, t_passinfo *pass)
 	info->count++;
 }
 
-void			ft_flag_minus(int n, t_inputinfo *info, t_passinfo *pass)
+void			ft_flag_minus(long n, t_inputinfo *info, t_passinfo *pass)
 {
 	if (pass->strlen == -1)
 	{
@@ -56,7 +56,7 @@ void			ft_flag_minus(int n, t_inputinfo *info, t_passinfo *pass)
 	info->count++;
 }
 
-void			ft_flag_zero(int n, t_inputinfo *info, t_passinfo *pass)
+void			ft_flag_zero(long n, t_inputinfo *info, t_passinfo *pass)
 {
 	while (pass->numlen < pass->width)
 	{
@@ -67,7 +67,7 @@ void			ft_flag_zero(int n, t_inputinfo *info, t_passinfo *pass)
 	info->count++;
 }
 
-void			ft_flag_hash(int n, t_inputinfo *info, t_passinfo *pass)
+void			ft_flag_hash(long n, t_inputinfo *info, t_passinfo *pass)
 {
 	if (pass->strlen == -1)
 		ft_putchar('0');
