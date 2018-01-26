@@ -6,14 +6,14 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/22 15:27:37 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/25 20:04:44 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/25 20:27:25 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 #include <stdio.h>
 
-int			ft_frontloadflag(long n, t_inputinfo *info, t_passinfo *pass)
+long			ft_frontloadflag(long n, t_inputinfo *info, t_passinfo *pass)
 {
 	pass->numlen = ft_numlen(n);
 	while (info->flag[info->f] != '\0' && info->flag[info->f] != '-')

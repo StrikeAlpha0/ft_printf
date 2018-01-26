@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 00:13:59 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/25 14:33:08 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/25 20:26:51 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ void			ft_flag_space(long n, t_inputinfo *info, t_passinfo *pass)
 {
 	if (n > 0 && info->switch1 == 0 && pass->numlen < pass->width)
 	{
-			ft_putchar(' ');
-			pass->numlen++;
-			n = n * 1;
-			info->switch1++;
+		ft_putchar(' ');
+		pass->numlen++;
+		n = n * 1;
+		info->switch1++;
 	}
 	info->count++;
 
