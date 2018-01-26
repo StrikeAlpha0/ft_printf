@@ -6,15 +6,16 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 19:29:01 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/25 19:13:22 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/25 20:05:03 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+#include <stdio.h>
 
 void		ft_putnbr(long n, t_inputinfo *info, t_passinfo *pass)
 {
-	int q;
+	long q;
 	info->f = 0;
 	if (n < 0)
 		pass->numlen++;
