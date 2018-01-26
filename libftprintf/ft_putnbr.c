@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 19:29:01 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/25 22:12:40 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/26 13:39:20 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 void		ft_putnbr(long n, t_inputinfo *info, t_passinfo *pass)
 {
+	info->swi = 0;
 	info->f = 0;
 	ft_frontloadflag(n, info, pass);
 	if (n < 0)
