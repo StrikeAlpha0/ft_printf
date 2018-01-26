@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/22 15:48:38 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/25 14:02:24 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/26 14:14:00 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void			ft_backloadflag(long n, t_inputinfo *info, t_passinfo *pass)
 			ft_flag_minus(n, info, pass);
 			info->f++;
 		}
+		info->f++;
 	}
 }
 
