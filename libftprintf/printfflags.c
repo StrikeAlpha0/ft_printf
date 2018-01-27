@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 00:13:59 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/26 21:07:32 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/26 21:08:53 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void			ft_flag_minus(long n, t_inputinfo *info, t_passinfo *pass)
 {
 	if (pass->strlen == -1)
 	{
-		while (pass->numlen <= pass->width)
+		while (pass->numlen < pass->width)
 		{
 			ft_putchar(' ');
 			pass->numlen++;
