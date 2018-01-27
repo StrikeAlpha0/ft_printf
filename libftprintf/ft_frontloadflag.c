@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/22 15:27:37 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/26 13:46:54 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/26 14:43:14 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,16 @@ void			ft_frontloadflag(long n, t_inputinfo *info, t_passinfo *pass)
 		info->f++;
 	}
 	info->f = 0;
-	while (info->flag[info->f] != '\0' && info->flag[info->f] != '-')
+/*	while (info->flag[info->f] != '\0' && info->flag[info->f] != '-')
 		info->f++;
 	if (info->flag[info->f] != '-')
 	{
-		while (pass->numlen < pass->width)
+		while (pass->numlen <= pass->width)
 		{
 			ft_putchar(' ');
 			pass->numlen++;
 		}
-	}	
+	}*/	
 }
 /*
 ** Add while loop to take flags in any order.
