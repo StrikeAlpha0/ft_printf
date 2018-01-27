@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/22 15:27:37 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/26 14:43:14 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/26 21:52:42 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ void			ft_frontloadflag(long n, t_inputinfo *info, t_passinfo *pass)
 
 	x = 0;
 	if (n < 0)
-		{
-			ft_putchar('-');
-			n = -n;
-			pass->numlen++;
-			info->swi++;
-		}
+	{
+		ft_putchar('-');
+		n = -n;
+		pass->numlen++;
+		info->swi++;
+	}
 	pass->numlen += ft_numlen(n);
 	while (info->flag[info->f] != '\0')
 	{
@@ -36,18 +36,5 @@ void			ft_frontloadflag(long n, t_inputinfo *info, t_passinfo *pass)
 			ft_flag_zero(n, info, pass);
 		info->f++;
 	}
-	info->f = 0;
-/*	while (info->flag[info->f] != '\0' && info->flag[info->f] != '-')
-		info->f++;
-	if (info->flag[info->f] != '-')
-	{
-		while (pass->numlen <= pass->width)
-		{
-			ft_putchar(' ');
-			pass->numlen++;
-		}
-	}*/	
+	info->f = 0;	
 }
-/*
-** Add while loop to take flags in any order.
-*/

@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 00:13:59 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/26 21:34:58 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/27 13:05:15 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,11 @@ void			ft_flag_plus(long n, t_inputinfo *info, t_passinfo *pass)
 
 void			ft_flag_space(long n, t_inputinfo *info, t_passinfo *pass)
 {
-	int x;
-
-	x = 0;
 	if (n > 0 && info->swi == 0)
 	{
 		ft_putchar(' ');
 		pass->numlen++;
-		info->swi++;
+		info->swi = 1;
 	}
 	if (info->swi == 2)
 	{
@@ -45,6 +42,7 @@ void			ft_flag_space(long n, t_inputinfo *info, t_passinfo *pass)
 			ft_putchar(' ');
 			pass->numlen++;
 		}
+		info->swi = 3;
 	}
 }
 
@@ -55,8 +53,7 @@ void			ft_flag_minus(long n, t_inputinfo *info, t_passinfo *pass)
 		while (pass->numlen < pass->width)
 		{
 			ft_putchar(' ');
-			pass->numlen++;
-			
+			pass->numlen++;	
 		}
 		n = n * 1;
 	}
