@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 00:13:59 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/28 12:46:58 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/28 13:17:38 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,14 @@ void			ft_flag_space(long n, t_inputinfo *info, t_passinfo *pass)
 {
 	if (n > 0 && info->swi == 0)
 	{
+	//	printf("Numlen value at start of space 1st half:%d", pass->numlen); 
 		ft_putchar(' ');
 		pass->numlen++;
 		info->swi = 1;
 	}
 	else if (info->swi == 2)
 	{
+	//	printf("Numlen value at start of 2nd half:%d", pass->numlen);
 		while (pass->numlen < pass->width)
 		{
 			ft_putchar(' ');
