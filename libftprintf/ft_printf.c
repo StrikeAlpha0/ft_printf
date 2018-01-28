@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/28 14:12:24 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/28 14:20:32 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ static void		search_width(va_list *list, const char *format, t_inputinfo *info, 
 
 static void 	search_specs(va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
 {
+	info->tsearch = 0;
 	while (format[info->i] != g_flag_table[info->tsearch].name && g_flag_table[info->tsearch].name != '\0')
 		info->tsearch++;
 	if(format[info->i] == g_flag_table[info->tsearch].name && g_flag_table[info->tsearch].name != '\0')
@@ -138,7 +139,7 @@ int		ft_printf(const char *format, ...)
 	initialize_it_all(&pass, &input);
 		
 	va_start(list, format);
-/*	while (format[input.i] != '\0')
+	while (format[input.i] != '\0')
 	{
 		if(format[input.i] == '%')
 		{
@@ -152,8 +153,8 @@ int		ft_printf(const char *format, ...)
 			ft_putchar(format[input.i]);
 			input.i++;
 		}
-	}*/
-	ft_putstr(format, &input, &pass);
+	}
+//	ft_putstr(format, &input, &pass);
 	va_end (list);
 	return (0);
 }
