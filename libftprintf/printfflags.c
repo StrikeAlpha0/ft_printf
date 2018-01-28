@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 00:13:59 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/27 13:05:15 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/27 13:07:37 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void			ft_flag_space(long n, t_inputinfo *info, t_passinfo *pass)
 		pass->numlen++;
 		info->swi = 1;
 	}
-	if (info->swi == 2)
+	else if (info->swi == 2)
 	{
 		while (pass->numlen < pass->width)
 		{
