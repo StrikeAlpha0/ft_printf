@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 00:13:59 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/28 12:34:31 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/28 12:46:58 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,17 +48,14 @@ void			ft_flag_space(long n, t_inputinfo *info, t_passinfo *pass)
 
 void			ft_flag_minus(long n, t_inputinfo *info, t_passinfo *pass)
 {
-	printf("Numlen value at start of minus:%d", pass->numlen);
 	if (pass->strlen == -1)
 	{
 		while (pass->numlen < pass->width)
 		{
 			ft_putchar(' ');
 			pass->numlen++;
-			printf("Numlen value after pass:%d", pass->numlen);	
 		}
 		n = n * 1;
-		printf("Numlen value after minus is done:%d", pass->numlen);
 	}
 	else if (pass->numlen == -1)
 	{

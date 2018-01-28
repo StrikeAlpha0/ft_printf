@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/22 15:27:37 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/28 12:36:54 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/28 12:45:44 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,4 @@ void			ft_frontloadflag(long n, t_inputinfo *info, t_passinfo *pass)
 		//	ft_flag_zero(n, info, pass);
 		info->f++;
 	}
-	printf("Value of numlen @ frontload end:%d", pass->numlen);	
 }
