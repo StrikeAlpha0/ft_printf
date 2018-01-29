@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 22:37:57 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/28 16:33:39 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/28 17:43:56 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int		ft_print_hex(unsigned long nbr, t_inputinfo *info, t_passinfo *pass)
 {
 	char *hex;
 	char i;
-	int q;
 		
 	if (info->flag[info->f] == '#' && info->hexswi == 0)
 	{
