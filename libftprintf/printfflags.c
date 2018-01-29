@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 00:13:59 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/28 14:07:56 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/28 16:38:54 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,10 @@ void			ft_flag_zero(long n, t_inputinfo *info, t_passinfo *pass)
 void			ft_flag_hash(long n, t_inputinfo *info, t_passinfo *pass)
 {
 	if (pass->strlen == -1)
-		ft_putchar('0');
+	{
+		if (n != 0)
+			ft_putchar('0');
+	}
 	if (pass->strlen == -2)
 		ft_putstr("0x", info, pass);
 	if (pass->strlen == -3)
