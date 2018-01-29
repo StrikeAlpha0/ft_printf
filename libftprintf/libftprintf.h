@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 18:06:27 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/28 16:34:06 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/28 16:44:46 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,8 @@ void			ft_per_x(va_list *list, t_inputinfo *info, t_passinfo *pass);
 void			ft_per_xup(va_list *list, t_inputinfo *info, t_passinfo *pass);
 void			ft_per_o(va_list *list, t_inputinfo *info, t_passinfo *pass);
 void			ft_per_oup(va_list *list, t_inputinfo *info, t_passinfo *pass);
-/*void			ft_per_p(va_list *list);
-*/
+void			ft_per_p(va_list *list, t_inputinfo *info, t_passinfo *pass);
+
 
 /*
 ** flags

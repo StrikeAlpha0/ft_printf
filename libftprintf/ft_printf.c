@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/28 14:20:32 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/28 17:00:27 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ t_printf_struct g_spec_table[] =
 	{'C', ft_per_c},
 	{'s', ft_per_s},
 	{'S', ft_per_s},
-//	{'p', ft_per_p},
+	{'p', ft_per_p},
 //	{'n', wub},
 	{'%', ft_per_per}
 };
@@ -69,6 +69,7 @@ t_printfflag_struct g_flag_table[] =
 	{' ', ft_flag_space},
 	{'#', ft_flag_hash},
 	{'0', ft_flag_zero}
+//	{'.', ft_flag_period}
 };
 
 static void		spec_table(va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
