@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 23:30:09 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/28 16:46:11 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/28 17:05:55 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ void			ft_per_p(va_list *list, t_inputinfo *info, t_passinfo *pass)
 	q = ((unsigned long)list);
 	w = q;
 	ft_putstr("0x", info, pass);
-	ft_print_hex((unsigned long)w, info, pass);
+	ft_print_hex(&(unsigned long)w, info, pass);
 }
