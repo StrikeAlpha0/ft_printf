@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 18:06:27 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/28 16:44:46 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/28 17:26:14 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void			ft_putstr(char const *s, t_inputinfo *info, t_passinfo *pass);
 void			ft_putchar(unsigned char c);
 void			ft_putnbrup(unsigned long n);
 //void			ft_putnbrf(long float n, t_inputinfo *info, t_passinfo *pass);
+void			ft_print_address(unsigned long n, t_inputinfo *info, t_passinfo *pass);
 int				ft_print_hex(unsigned long nbr, t_inputinfo *input,
 		t_passinfo *pass);
 int				ft_print_hexup(unsigned long nbr, t_inputinfo *input,
