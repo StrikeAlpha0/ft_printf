@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 22:37:57 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/21 16:30:16 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/28 16:36:19 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@ int		ft_print_octal(unsigned long nbr, t_inputinfo *info, t_passinfo *pass)
 	char *octal;
 	char i;
 
-	if (info->flag[info->f] == '#')
+	if (info->flag[info->f] == '#' && info->hexswi == 0)
 	{
 		pass->strlen = -1;
 		ft_flag_hash(nbr, info, pass);
+		info->hexswi = 1;
 	}
 	i = 0;
 	octal = "01234567";

@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 22:37:57 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/21 15:17:13 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/28 16:33:39 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@ int		ft_print_hex(unsigned long nbr, t_inputinfo *info, t_passinfo *pass)
 {
 	char *hex;
 	char i;
-
-	if (info->flag[info->f] == '#')
+	int q;
+		
+	if (info->flag[info->f] == '#' && info->hexswi == 0)
 	{
 		pass->strlen = -2;
 		ft_flag_hash(nbr, info, pass);
+		info->hexswi = 1;
 	}
 	i = 0;
 	hex = "0123456789abcdef";

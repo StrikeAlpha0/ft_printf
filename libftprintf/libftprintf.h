@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 18:06:27 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/27 16:50:59 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/28 16:34:06 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct	s_inputinfo
 	int			x;
 	int			count;
 	int			swi;
+	int			hexswi;
 }				t_inputinfo;
 
 typedef	struct	s_printf_struct
