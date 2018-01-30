@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 18:06:27 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/28 17:26:14 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/29 22:56:13 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct	s_inputinfo
 	int			count;
 	int			swi;
 	int			hexswi;
+	int			cast;
 }				t_inputinfo;
 
 typedef	struct	s_printf_struct
@@ -52,6 +53,14 @@ typedef struct	s_printfflag_struct
 	void		(*function)(long n, t_inputinfo *info, t_passinfo *pass);
 }				t_printfflag_struct;
 
+typedef struct	s_printfcast_struct
+{
+	char		name;
+	void		(*function)(va_list *list, t_inputinfo *info, t_passinfo *pass);
+}				t_printfcast_struct;
+
+extern t_printfcast_struct	g_cast_table[];
+
 int				ft_printf(const char *format, ...);
 int				ft_atoi(const char *str);
 //float long		ft_atoif(const char *str);
@@ -59,6 +68,8 @@ void			ft_bzero(void *s, size_t n);
 void			ft_putnbr(long n, t_inputinfo *info, t_passinfo *pass);
 void			ft_putstr(char const *s, t_inputinfo *info, t_passinfo *pass);
 void			ft_putchar(unsigned char c);
+int				ft_strstr(const char *haystack, const char *needle);
+size_t				ft_strlen(const char *s);
 void			ft_putnbrup(unsigned long n);
 //void			ft_putnbrf(long float n, t_inputinfo *info, t_passinfo *pass);
 void			ft_print_address(unsigned long n, t_inputinfo *info, t_passinfo *pass);
@@ -119,4 +130,10 @@ void			ft_midloadflag(long n, t_inputinfo *info, t_passinfo *pass);
 void			ft_backloadflag(long n, t_inputinfo *info, t_passinfo *pass);
 //void			ft_frontflagfloat(float long n, t_inputinfo *info, t_passinfo *pass);
 //void			ft_backloadflagfloat(float long n, t_inputinfo *info, t_passinfo *pass);
+
+/*
+** Specifiers
+*/
+
+void			ft_printfspecify(va_list *list, t_inputinfo *info, t_passinfo *pass);
 #endif

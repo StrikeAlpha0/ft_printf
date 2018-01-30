@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 23:17:05 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/24 22:22:34 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/29 19:34:16 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,50 @@
 
 void			ft_per_doi(va_list *list, t_inputinfo *info, t_passinfo *pass)
 {
-	ft_putnbr(((long)va_arg(*list, int)), info, pass);
+	while (info->flag[info->cast] != '\0' && info->flag[info->cast] != g_cast_table[info->cast].name)
+	   info->cast++;
+	if (info->flag[info->cast] != '\0' && info->flag[info->cast] == g_cast_table[info->cast].name)
+	{
+		ft_printfspecify(list, info, pass);
+		return ;
+	}	
+	else 
+		ft_putnbr(((long)va_arg(*list, int)), info, pass);
 }
 
 void			ft_per_dup(va_list *list, t_inputinfo *info, t_passinfo *pass)
 {
+	while (info->flag[info->cast] != '\0' && info->flag[info->cast] != g_cast_table[info->cast].name)
+	   info->cast++;
+	if (info->flag[info->cast] != '\0' && info->flag[info->cast] == g_cast_table[info->cast].name)
+	{
+		ft_printfspecify(list, info, pass);
+		return ;
+	}
 	ft_putnbr(va_arg(*list, long), info, pass);
 }
 
 void			ft_per_uup(va_list *list, t_inputinfo *info, t_passinfo *pass)
 {
+	while (info->flag[info->cast] != '\0' && info->flag[info->cast] != g_cast_table[info->cast].name)
+	   info->cast++;
+	if (info->flag[info->cast] != '\0' && info->flag[info->cast] == g_cast_table[info->cast].name)
+	{
+		ft_printfspecify(list, info, pass);
+		return ;
+	}
 	ft_putnbr(va_arg(*list, unsigned int), info, pass);
 }
 
 void			ft_per_u(va_list *list, t_inputinfo *info, t_passinfo *pass)
 {
+	while (info->flag[info->cast] != '\0' && info->flag[info->cast] != g_cast_table[info->cast].name)
+	   info->cast++;
+	if (info->flag[info->cast] != '\0' && info->flag[info->cast] == g_cast_table[info->cast].name)
+	{
+		ft_printfspecify(list, info, pass);
+		return ;
+	}
 	ft_putnbr(va_arg(*list, unsigned int), info, pass);
 }
 

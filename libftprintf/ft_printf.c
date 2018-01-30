@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/28 17:00:27 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/29 22:48:39 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,14 @@ t_printfflag_struct g_flag_table[] =
 //	{'.', ft_flag_period}
 };
 
+t_printfcast_struct g_cast_table[] =
+{
+	{'h', ft_printfspecify},
+	{'l', ft_printfspecify},
+	{'j', ft_printfspecify},
+	{'z', ft_printfspecify}
+};
+
 static void		spec_table(va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
 {
 	info->tsearch = 0;
@@ -100,9 +108,10 @@ static void		search_width(va_list *list, const char *format, t_inputinfo *info, 
 static void 	search_specs(va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
 {
 	info->tsearch = 0;
+	info->cast = 0;
 	while (format[info->i] != g_flag_table[info->tsearch].name && g_flag_table[info->tsearch].name != '\0')
 		info->tsearch++;
-	if(format[info->i] == g_flag_table[info->tsearch].name && g_flag_table[info->tsearch].name != '\0')
+	if((format[info->i] == g_flag_table[info->tsearch].name && g_flag_table[info->tsearch].name != '\0') || (format[info->i] != g_cast_table[info->cast].name && g_cast_table[info->cast].name != '\0'))
 	{
 			info->flag[info->f] = format[info->i];
 			info->f++;
@@ -129,6 +138,7 @@ static void		reset(t_inputinfo *info, t_passinfo *pass)
 	info->x = 0;
 	info->swi = 0;
 	pass->numlen = 0;
+	info->cast = 0;
 }
 
 int		ft_printf(const char *format, ...)
