@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/29 22:48:39 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/30 09:47:49 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,9 +109,21 @@ static void 	search_specs(va_list *list, const char *format, t_inputinfo *info, 
 {
 	info->tsearch = 0;
 	info->cast = 0;
+	while (format[info->i] != g_cast_table[info->tsearch].name && g_cast_table[info->tsearch].name != '\0')
+	{
+		info->tsearch++;
+		if (format[info->i] == g_cast_table[info->tsearch].name && g_cast_table[info->tsearch].name != '\0')
+			{
+				info->flag[info->f] = format[info->i];
+				info->f++;
+				info->i++;
+				search_specs(list,format,info, pass);
+				break ;
+			}
+	}
 	while (format[info->i] != g_flag_table[info->tsearch].name && g_flag_table[info->tsearch].name != '\0')
 		info->tsearch++;
-	if((format[info->i] == g_flag_table[info->tsearch].name && g_flag_table[info->tsearch].name != '\0') || (format[info->i] != g_cast_table[info->cast].name && g_cast_table[info->cast].name != '\0'))
+	if (format[info->i] == g_flag_table[info->tsearch].name && g_flag_table[info->tsearch].name != '\0')
 	{
 			info->flag[info->f] = format[info->i];
 			info->f++;
@@ -144,14 +156,16 @@ static void		reset(t_inputinfo *info, t_passinfo *pass)
 int		ft_printf(const char *format, ...)
 {
 	va_list list;
-	t_passinfo pass;
+	t_passinfo 	pass;
 	t_inputinfo input;
-	
+/**/	int			final_count;
+
 	initialize_it_all(&pass, &input);
 		
 	va_start(list, format);
 	while (format[input.i] != '\0')
 	{
+/**/	final_count++;
 		if(format[input.i] == '%')
 		{
 			input.i++;
@@ -166,6 +180,7 @@ int		ft_printf(const char *format, ...)
 		}
 	}
 //	ft_putstr(format, &input, &pass);
+/**/	ft_putnbr(final_count, &input, &pass);
 	va_end (list);
 	return (0);
 }
