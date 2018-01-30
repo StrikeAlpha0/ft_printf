@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/30 09:47:49 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/30 10:22:02 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,6 +159,8 @@ int		ft_printf(const char *format, ...)
 	t_passinfo 	pass;
 	t_inputinfo input;
 /**/	int			final_count;
+
+	final_count = 0;
 
 	initialize_it_all(&pass, &input);
 		
