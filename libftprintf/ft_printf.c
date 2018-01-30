@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/30 10:22:02 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/30 10:23:37 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,7 +182,7 @@ int		ft_printf(const char *format, ...)
 		}
 	}
 //	ft_putstr(format, &input, &pass);
-/**/	ft_putnbr(final_count, &input, &pass);
+//	ft_putnbr(final_count, &input, &pass);
 	va_end (list);
 	return (0);
 }
