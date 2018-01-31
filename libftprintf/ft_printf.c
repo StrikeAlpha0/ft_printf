@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/30 18:41:31 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/30 19:04:26 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,8 @@ static void		spec_table(va_list *list, const char *format, t_inputinfo *info, t_
 		info->tsearch++;
 	if (g_spec_table[info->tsearch].name == 'd' || g_spec_table[info->tsearch].name == 'i')
 		ft_printfspecify(list, info, pass);
+	if (g_spec_table[info->tsearch].name == 'u')
+		ft_printfspecify1(list, info, pass);
 	else if (format[info->i] == g_spec_table[info->tsearch].name && g_spec_table[info->tsearch].name != '\0')
 		g_spec_table[info->tsearch].function(list, info, pass);
 	else
