@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/29 13:01:59 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/30 19:12:14 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/30 19:58:39 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,17 @@ void		ft_printfspecify1(va_list *list, t_inputinfo *info, t_passinfo *pass)
 	int q;
 
 	if ((q = ft_strstr((info->flag), "hh")) && q == 1)
-		ft_putnbr(((unsigned char)(va_arg(*list, int))), info, pass);	
+		ft_putnbrup(((unsigned char)(va_arg(*list, int))));	
 	else if ((q = ft_strstr((info->flag), "h")) && q == 1)
-		ft_putnbr(((unsigned short int)(va_arg(*list, int))), info, pass);
+		ft_putnbrup(((unsigned short int)(va_arg(*list, int))));
 	else if ((q = ft_strstr((info->flag), "ll")) && q == 1)
-		ft_putnbr((va_arg(*list, unsigned long long)), info, pass);
+		ft_putnbrup((va_arg(*list, unsigned long long)));
 	else if ((q = ft_strstr((info->flag), "l")) && q == 1)
-		ft_putnbr((va_arg(*list, unsigned long int)), info, pass);
+		ft_putnbrup(((va_arg(*list, unsigned int))));
 	else if ((q = ft_strstr((info->flag), "j")) && q == 1)
-		ft_putnbr((va_arg(*list, intmax_t)), info, pass);
+		ft_putnbrup((va_arg(*list, intmax_t)));
 	else if ((q = ft_strstr((info->flag), "z")) && q == 1)
-		ft_putnbr((va_arg(*list, size_t)), info, pass);
+		ft_putnbrup((va_arg(*list, size_t)));
 	else
 		ft_per_u(list, info, pass);
 }
