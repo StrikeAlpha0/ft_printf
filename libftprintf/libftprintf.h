@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 18:06:27 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/29 22:56:13 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/30 12:10:27 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct	s_inputinfo
 	char		flag[10];
 	int			f;
 	int			x;
+	int			y;
 	int			count;
 	int			swi;
 	int			hexswi;
