@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 18:06:27 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/30 21:38:13 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/31 12:04:01 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct	s_passinfo
 	int			strlen;
 	int			width;
 	char		*stuff;
-	int 		count;
+	int 		final_count;
 }				t_passinfo;
 
 typedef struct	s_inputinfo
@@ -71,7 +71,7 @@ void			ft_putstr(char const *s, t_inputinfo *info, t_passinfo *pass);
 void			ft_putchar(unsigned char c);
 int				ft_strstr(const char *haystack, const char *needle);
 size_t				ft_strlen(const char *s);
-void			ft_putnbrup(unsigned long n);
+void			ft_putnbrup(unsigned long n, t_passinfo *pass);
 //void			ft_putnbrf(long float n, t_inputinfo *info, t_passinfo *pass);
 void			ft_print_address(unsigned long n, t_inputinfo *info, t_passinfo *pass);
 int				ft_print_hex(unsigned long nbr, t_inputinfo *input,

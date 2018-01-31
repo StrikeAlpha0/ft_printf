@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 19:29:01 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/28 13:20:31 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/31 11:59:00 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void		ft_putnbr(long n, t_inputinfo *info, t_passinfo *pass)
 	ft_midloadflag(n, info, pass);
 	if (n < 0)
 		n = -n;
-	ft_putnbrup(n);
+	ft_putnbrup(n, pass);
+			pass->final_count++;
 	ft_backloadflag(n, info, pass);
 }

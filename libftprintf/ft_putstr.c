@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/05 22:42:31 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/24 23:02:06 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/31 11:49:36 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	ft_putstr(char const *s, t_inputinfo *info, t_passinfo *pass)
 	{
 		ft_putchar(*(s + i));
 		i++;
+		pass->final_count++;
 	}
 	if (info->flag[info->f] == '-')
 		ft_flag_minus(*s, info, pass);

@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 13:20:07 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/30 19:23:13 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/31 11:29:06 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void			initialize_pass_values(t_passinfo *pass_info)
 	pass_info->strlen = 0;
 	pass_info->width = 0;
 	pass_info->stuff = "\0";
+	pass_info->final_count = 0;
 }
 
 void			initialize_input_values(t_inputinfo *input_info)

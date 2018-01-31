@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 00:13:59 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/28 16:38:54 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/31 11:57:04 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void			ft_flag_plus(long n, t_inputinfo *info, t_passinfo *pass)
 		pass->numlen++;
 	}
 	info->swi++;
-	pass->count++;
+	pass->final_count++;
 	
 }
 
@@ -35,6 +35,7 @@ void			ft_flag_space(long n, t_inputinfo *info, t_passinfo *pass)
 		ft_putchar(' ');
 		pass->numlen++;
 		info->swi = 1;
+		pass->final_count++;
 	}
 	else if (info->swi == 2)
 	{
@@ -43,6 +44,7 @@ void			ft_flag_space(long n, t_inputinfo *info, t_passinfo *pass)
 		{
 			ft_putchar(' ');
 			pass->numlen++;
+			pass->final_count++;
 		}
 		info->swi = 3;
 	}
@@ -56,6 +58,7 @@ void			ft_flag_minus(long n, t_inputinfo *info, t_passinfo *pass)
 		{
 			ft_putchar(' ');
 			pass->numlen++;
+			pass->final_count++;
 		}
 		n = n * 1;
 	}
@@ -65,6 +68,7 @@ void			ft_flag_minus(long n, t_inputinfo *info, t_passinfo *pass)
 		{
 			ft_putchar(' ');
 			pass->strlen++;
+			pass->final_count++;
 		}
 	}
 	info->count++;
@@ -76,6 +80,7 @@ void			ft_flag_zero(long n, t_inputinfo *info, t_passinfo *pass)
 	{
 		ft_putchar('0');
 		pass->numlen++;
+		pass->final_count++;
 	}
 	n = n * 1;
 	info->count++;
@@ -86,11 +91,20 @@ void			ft_flag_hash(long n, t_inputinfo *info, t_passinfo *pass)
 	if (pass->strlen == -1)
 	{
 		if (n != 0)
+		{
 			ft_putchar('0');
+			pass->final_count++;
+		}
 	}
 	if (pass->strlen == -2)
+	{
 		ft_putstr("0x", info, pass);
+		pass->final_count += 2;
+	}
 	if (pass->strlen == -3)
+	{
 		ft_putstr("0X", info, pass);
+		pass->final_count += 2;
+	}	
 	n = n * 1;
 }
