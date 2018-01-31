@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/30 20:48:53 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/30 21:43:29 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,10 @@ t_printfcast_struct g_cast_table[] =
 	{'z', ft_printfspecify}
 };
 
-static void		spec_table(va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
+void		spec_table(va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
 {
+	if (info->y >= 1)
+		return ;
 	info->tsearch = 0;
 	while (format[info->i] != g_spec_table[info->tsearch].name && g_spec_table[info->tsearch].name != '\0')
 		info->tsearch++;
@@ -96,7 +98,7 @@ static void		spec_table(va_list *list, const char *format, t_inputinfo *info, t_
 	info->i++;
 }
 
-static void		search_width(va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
+/*static void		search_width(va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
 {
 	if (info->x >= 1)
 		return ;
@@ -105,11 +107,12 @@ static void		search_width(va_list *list, const char *format, t_inputinfo *info, 
 		pass->width = ft_atoi(format + info->i);
 		while (format[info->i] >= '0' && format[info->i] <= '9')
 			info->i++;
+		search_specs(list, format, info, pass);
 	}
 	spec_table(list, format, info, pass);
-}
+}*/
 
-static void 	search_specs(va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
+void 	search_specs(va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
 {
 	info->tsearch = 0;
 	while (format[info->i] != g_flag_table[info->tsearch].name && g_flag_table[info->tsearch].name != '\0')
