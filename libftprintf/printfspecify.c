@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/29 13:01:59 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/30 19:02:47 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/30 19:12:14 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ void		ft_printfspecify1(va_list *list, t_inputinfo *info, t_passinfo *pass)
 	else if ((q = ft_strstr((info->flag), "z")) && q == 1)
 		ft_putnbr((va_arg(*list, size_t)), info, pass);
 	else
-		ft_per_doi(list, info, pass);
+		ft_per_u(list, info, pass);
 }

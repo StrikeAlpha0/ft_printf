@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 23:17:05 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/29 19:34:16 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/30 19:20:18 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void			ft_per_doi(va_list *list, t_inputinfo *info, t_passinfo *pass)
 {
-	while (info->flag[info->cast] != '\0' && info->flag[info->cast] != g_cast_table[info->cast].name)
+	while (g_cast_table[info->cast].name != '\0' && info->flag[info->cast] != g_cast_table[info->cast].name)
 	   info->cast++;
 	if (info->flag[info->cast] != '\0' && info->flag[info->cast] == g_cast_table[info->cast].name)
 	{
@@ -28,7 +28,7 @@ void			ft_per_doi(va_list *list, t_inputinfo *info, t_passinfo *pass)
 
 void			ft_per_dup(va_list *list, t_inputinfo *info, t_passinfo *pass)
 {
-	while (info->flag[info->cast] != '\0' && info->flag[info->cast] != g_cast_table[info->cast].name)
+	while (g_cast_table[info->cast].name != '\0' && info->flag[info->cast] != g_cast_table[info->cast].name)
 	   info->cast++;
 	if (info->flag[info->cast] != '\0' && info->flag[info->cast] == g_cast_table[info->cast].name)
 	{
@@ -40,7 +40,7 @@ void			ft_per_dup(va_list *list, t_inputinfo *info, t_passinfo *pass)
 
 void			ft_per_uup(va_list *list, t_inputinfo *info, t_passinfo *pass)
 {
-	while (info->flag[info->cast] != '\0' && info->flag[info->cast] != g_cast_table[info->cast].name)
+	while (g_cast_table[info->cast].name != '\0' && info->flag[info->cast] != g_cast_table[info->cast].name)
 	   info->cast++;
 	if (info->flag[info->cast] != '\0' && info->flag[info->cast] == g_cast_table[info->cast].name)
 	{
@@ -52,7 +52,7 @@ void			ft_per_uup(va_list *list, t_inputinfo *info, t_passinfo *pass)
 
 void			ft_per_u(va_list *list, t_inputinfo *info, t_passinfo *pass)
 {
-	while (info->flag[info->cast] != '\0' && info->flag[info->cast] != g_cast_table[info->cast].name)
+	while (g_cast_table[info->cast].name != '\0' && info->flag[info->cast] != g_cast_table[info->cast].name)
 	   info->cast++;
 	if (info->flag[info->cast] != '\0' && info->flag[info->cast] == g_cast_table[info->cast].name)
 	{

@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 13:20:07 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/30 12:12:44 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/30 19:23:13 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void			initialize_input_values(t_inputinfo *input_info)
 	input_info->y = 0;
 	ft_bzero(input_info->flag, 10);
 	input_info->hexswi = 0;
+	input_info->cast = 0;
 }
 
 void			initialize_it_all(t_passinfo *pass, t_inputinfo *input)
