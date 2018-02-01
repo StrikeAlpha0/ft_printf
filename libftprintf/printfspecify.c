@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/29 13:01:59 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/31 12:02:30 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/31 20:44:54 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void		ft_printfspecify1(va_list *list, t_inputinfo *info, t_passinfo *pass)
 	else if ((q = ft_strstr((info->flag), "ll")) && q == 1)
 		ft_putnbrup((va_arg(*list, unsigned long long)), pass);
 	else if ((q = ft_strstr((info->flag), "l")) && q == 1)
-		ft_putnbrup(((va_arg(*list, unsigned int))), pass);
+		ft_putnbrup(((va_arg(*list, unsigned long))), pass);
 	else if ((q = ft_strstr((info->flag), "j")) && q == 1)
 		ft_putnbrup((va_arg(*list, intmax_t)), pass);
 	else if ((q = ft_strstr((info->flag), "z")) && q == 1)
