@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/31 11:56:30 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/31 17:11:48 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,17 +115,32 @@ void		spec_table(va_list *list, const char *format, t_inputinfo *info, t_passinf
 void 	search_specs(va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
 {
 	info->tsearch = 0;
-	while (format[info->i] != g_flag_table[info->tsearch].name && g_flag_table[info->tsearch].name != '\0')
-		info->tsearch++;
-	if (format[info->i] == g_flag_table[info->tsearch].name && g_flag_table[info->tsearch].name != '\0')
+	info->cast = 0;
+	while (format[info->i] != g_cast_table[info->cast].name && g_cast_table[info->cast].name != '\0')
 	{
+		info->cast++;
+		if (format[info->i] == g_cast_table[info->cast].name && g_cast_table[info->cast].name != '\0')
+		{
 			info->flag[info->f] = format[info->i];
 			info->f++;
 			info->i++;
 			search_specs(list, format, info, pass);
 			info->x = 1;
+		}
 	}
-	search_width(list, format, info, pass);
+	while (format[info->i] != g_flag_table[info->tsearch].name && g_flag_table[info->tsearch].name != '\0')
+	{
+		info->tsearch++;
+		if (format[info->i] == g_flag_table[info->tsearch].name && g_flag_table[info->tsearch].name != '\0')
+		{
+			info->flag[info->f] = format[info->i];
+			info->f++;
+			info->i++;
+			search_specs(list, format, info, pass);
+			info->x = 1;
+		}
+	}
+		search_width(list, format, info, pass);
 }
 
 /*
