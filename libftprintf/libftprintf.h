@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 18:06:27 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/31 12:04:01 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/31 21:23:15 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct	s_passinfo
 	int			width;
 	char		*stuff;
 	int 		final_count;
+
 }				t_passinfo;
 
 typedef struct	s_inputinfo
@@ -40,6 +41,8 @@ typedef struct	s_inputinfo
 	int			swi;
 	int			hexswi;
 	int			cast;
+	int			precision;
+	int			p;
 }				t_inputinfo;
 
 typedef	struct	s_printf_struct
