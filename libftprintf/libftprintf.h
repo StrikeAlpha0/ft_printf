@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 18:06:27 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/01 12:21:44 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/01 14:24:09 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ int				ft_atoi(const char *str);
 void			ft_bzero(void *s, size_t n);
 void			ft_putnbr(long n, t_inputinfo *info, t_passinfo *pass);
 void			ft_putstr(char const *s, t_inputinfo *info, t_passinfo *pass);
+void			ft_putstrup(char const *s, t_inputinfo *info, t_passinfo *pass);
 void			ft_putchar(unsigned char c);
 int				ft_strstr(const char *haystack, const char *needle);
 size_t				ft_strlen(const char *s);

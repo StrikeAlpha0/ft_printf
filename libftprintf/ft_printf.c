@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/31 21:43:30 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/01 12:39:12 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,6 +157,7 @@ static void		reset(t_inputinfo *info, t_passinfo *pass)
 	pass->numlen = 0;
 	info->cast = 0;
 	info->y = 0;
+	info->precision = 0;
 }
 
 int		ft_printf(const char *format, ...)
