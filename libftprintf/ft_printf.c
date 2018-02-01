@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/31 17:11:48 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/31 17:21:50 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,6 @@ void 	search_specs(va_list *list, const char *format, t_inputinfo *info, t_passi
 	info->cast = 0;
 	while (format[info->i] != g_cast_table[info->cast].name && g_cast_table[info->cast].name != '\0')
 	{
-		info->cast++;
 		if (format[info->i] == g_cast_table[info->cast].name && g_cast_table[info->cast].name != '\0')
 		{
 			info->flag[info->f] = format[info->i];
@@ -127,10 +126,10 @@ void 	search_specs(va_list *list, const char *format, t_inputinfo *info, t_passi
 			search_specs(list, format, info, pass);
 			info->x = 1;
 		}
+		info->cast++;
 	}
 	while (format[info->i] != g_flag_table[info->tsearch].name && g_flag_table[info->tsearch].name != '\0')
 	{
-		info->tsearch++;
 		if (format[info->i] == g_flag_table[info->tsearch].name && g_flag_table[info->tsearch].name != '\0')
 		{
 			info->flag[info->f] = format[info->i];
@@ -139,6 +138,7 @@ void 	search_specs(va_list *list, const char *format, t_inputinfo *info, t_passi
 			search_specs(list, format, info, pass);
 			info->x = 1;
 		}
+		info->tsearch++;
 	}
 		search_width(list, format, info, pass);
 }
