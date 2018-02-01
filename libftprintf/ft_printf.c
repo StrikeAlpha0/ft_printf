@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/31 20:34:17 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/01/31 21:43:30 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,8 @@ t_printfflag_struct g_flag_table[] =
 	{'+', ft_flag_plus},
 	{' ', ft_flag_space},
 	{'#', ft_flag_hash},
-	{'0', ft_flag_zero}
-//	{'.', ft_flag_period}
+	{'0', ft_flag_zero},
+	{'.', ft_flag_period}
 };
 
 t_printfcast_struct g_cast_table[] =

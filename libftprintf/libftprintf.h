@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 18:06:27 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/31 21:23:15 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/01 12:21:44 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct	s_passinfo
 	int			width;
 	char		*stuff;
 	int 		final_count;
+	int			count;
 
 }				t_passinfo;
 
@@ -106,6 +107,7 @@ void			ft_flag_space(long n, t_inputinfo *info, t_passinfo *pass);
 void			ft_flag_minus(long n, t_inputinfo *info, t_passinfo *pass);
 void			ft_flag_zero(long n, t_inputinfo	*info, t_passinfo *pass);
 void			ft_flag_hash(long n, t_inputinfo *info, t_passinfo *pass);
+void			ft_flag_period(long n, t_inputinfo *info, t_passinfo *pass);
 
 /*
 ** writer
