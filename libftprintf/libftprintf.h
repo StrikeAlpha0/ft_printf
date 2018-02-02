@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 18:06:27 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/01 14:24:09 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/01 16:53:35 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct	s_inputinfo
 	int			cast;
 	int			precision;
 	int			p;
+	int			z;
 }				t_inputinfo;
 
 typedef	struct	s_printf_struct
