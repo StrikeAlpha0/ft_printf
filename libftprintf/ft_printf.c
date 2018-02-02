@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/01 17:34:40 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/01 22:04:29 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ t_printfcast_struct g_cast_table[] =
 
 void		spec_table(va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
 {
-	if (info->z >= 1)
+	if (info->y >= 1 || info->z >= 1)
 		return ;
 	info->tsearch = 0;
 	while (format[info->i] != g_spec_table[info->tsearch].name && g_spec_table[info->tsearch].name != '\0')
