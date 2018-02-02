@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/05 22:42:31 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/01 23:04:57 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/01 23:16:23 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ void	ft_putstr(char const *s, t_inputinfo *info, t_passinfo *pass)
 	int n;
 
 	i = 0;
-	n = ft_strlen(s);
-	info->f = 0;
 	if (s == NULL)
 	{
 		 write(1, "(null)", 6);
 		 return ;
 	}
+	n = ft_strlen(s);
+	info->f = 0;
 	//if (info->precision == 0)
 		ft_putstrup(s, info, pass);
 	/*else if (info->precision > 0)
