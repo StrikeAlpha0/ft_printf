@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 18:06:27 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/01 16:53:35 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/02 12:47:05 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void			ft_putstrup(char const *s, t_inputinfo *info, t_passinfo *pass);
 void			ft_putchar(unsigned char c);
 int				ft_strstr(const char *haystack, const char *needle);
 size_t				ft_strlen(const char *s);
-void			ft_putnbrup(unsigned long n, t_passinfo *pass);
+void			ft_putnbrup(unsigned long n, t_inputinfo *info, t_passinfo *pass);
 //void			ft_putnbrf(long float n, t_inputinfo *info, t_passinfo *pass);
 void			ft_print_address(unsigned long n, t_inputinfo *info, t_passinfo *pass);
 int				ft_print_hex(unsigned long nbr, t_inputinfo *input,

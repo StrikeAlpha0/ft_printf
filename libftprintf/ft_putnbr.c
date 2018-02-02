@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 19:29:01 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/31 13:23:18 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/02 12:46:02 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void		ft_putnbr(long n, t_inputinfo *info, t_passinfo *pass)
 {
 	info->swi = 0;
 	info->f = 0;
+	info->z = 1;
 //	printf("Numlen at start of putnbr:%d", pass->numlen);
 	ft_frontloadflag(n, info, pass);
 		info->f = 0;
@@ -32,7 +33,7 @@ void		ft_putnbr(long n, t_inputinfo *info, t_passinfo *pass)
 	ft_midloadflag(n, info, pass);
 	if (n < 0)
 		n = -n;
-	ft_putnbrup(n, pass);
+	ft_putnbrup(n, info, pass);
 			pass->final_count++;
 	ft_backloadflag(n, info, pass);
 }

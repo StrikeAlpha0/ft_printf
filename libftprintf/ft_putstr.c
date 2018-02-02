@@ -6,16 +6,18 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/05 22:42:31 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/01 23:16:23 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/02 11:46:29 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+#include <stdio.h>
 
 void	ft_putstr(char const *s, t_inputinfo *info, t_passinfo *pass)
 {
 	int i;
 	int n;
+	int q;
 
 	i = 0;
 	if (s == NULL)
@@ -25,9 +27,9 @@ void	ft_putstr(char const *s, t_inputinfo *info, t_passinfo *pass)
 	}
 	n = ft_strlen(s);
 	info->f = 0;
-	//if (info->precision == 0)
+	if (info->precision == 0)
 		ft_putstrup(s, info, pass);
-	/*else if (info->precision > 0)
+	else if (info->precision > 0)
 	{
 		while (s + i != NULL && *(s + i) != '\0' && info->p < info->precision )
 		{
@@ -41,7 +43,8 @@ void	ft_putstr(char const *s, t_inputinfo *info, t_passinfo *pass)
 			ft_putchar(' ');
 			i++;
 		}
-	}*/
-	if (info->flag[info->f] == '-')
+	}
+	if ((q = ft_strstr((info->flag), "-")) && q == 1)
 		ft_flag_minus(*s, info, pass);
+	printf("Width:%d, precision:%d", pass->width, info->precision);
 }
