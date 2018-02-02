@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 21:20:40 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/01 21:54:01 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/01 21:59:04 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void		search_precision(va_list *list, const char *format, t_inputinfo *info, t_p
 		info->z++;
 	}
 	spec_table(list, format, info, pass);
-	info->z++;
 }
 
 void		search_width(va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
