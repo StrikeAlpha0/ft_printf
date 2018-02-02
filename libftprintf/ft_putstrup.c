@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/01 12:32:45 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/01 14:26:12 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/01 23:08:40 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void		ft_putstrup(char const *s, t_inputinfo *info, t_passinfo *pass)
 	{
 		ft_putchar(*(s + i));
 		i++;
-		info->p++;
 		pass->final_count++;
 	}
 }
