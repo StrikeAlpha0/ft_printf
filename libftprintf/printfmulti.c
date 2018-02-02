@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/01 11:52:55 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/01 12:22:34 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/01 22:57:54 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void			ft_flag_period(long n, t_inputinfo *info, t_passinfo *pass)
 {
+	n = 1;
 	info->f++;
 	if (info->flag[info->f] >= '0' && info->flag[info->f] <= '9')
 	{
