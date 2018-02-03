@@ -6,31 +6,20 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/01 23:19:15 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/02 22:59:53 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
-#include <stdio.h>
 #include "libftprintf.h"
+
 /*
 ** Table: d:print int digits, D:long ints, i:print int digits, u:unsigned int
 ** U:unsigned long int, o:octal conversion, O:long octal conversion,
-** x:lowercase hex X:uppercase hex, f:convert/print float,
-** F:convert/print upper(?) float, c:print char, C:print wide char,
+** x:lowercase hex X:uppercase hex, c:print char, C:print wide char,
 ** s:print string, S:print wide string, p:print address, %:print a %
 */
 
-/* 
-** D-print long ints(Currently has predicted output/ SysPrintf returns
-** unsigned int however?
-*/
-/*
-void		wub(void)
-{
-	ft_putchar('X');
-}
-*/
 t_printf_struct g_spec_table[] =
 {
 	{'d', ft_per_doi},
@@ -42,20 +31,11 @@ t_printf_struct g_spec_table[] =
 	{'O', ft_per_oup},
 	{'x', ft_per_x},
 	{'X', ft_per_xup},
-//	{'f', ft_per_f},
-//	{'F', ft_per_f},
-//	{'e', wub},
-//	{'E', wub},
-//	{'g', wub},
-//	{'G', wub},
-//	{'a', wub},
-//	{'A', wub},
 	{'c', ft_per_c},
 	{'C', ft_per_c},
 	{'s', ft_per_s},
 	{'S', ft_per_s},
 	{'p', ft_per_p},
-//	{'n', wub},
 	{'%', ft_per_per}
 };
 /*
@@ -80,63 +60,58 @@ t_printfcast_struct g_cast_table[] =
 	{'z', ft_printfspecify}
 };
 
-void		spec_table(va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
+void		spec_table(va_list *list, const char *format,
+		t_inputinfo *info, t_passinfo *pass)
 {
 	if (info->y >= 1)
 		return ;
 	info->tsearch = 0;
-	while (format[info->i] != g_spec_table[info->tsearch].name && g_spec_table[info->tsearch].name != '\0')
+	while (format[info->i] != g_spec_table[info->tsearch].name &&
+			g_spec_table[info->tsearch].name != '\0')
 		info->tsearch++;
-	if (g_spec_table[info->tsearch].name == 'd' || g_spec_table[info->tsearch].name == 'i')
+	if (g_spec_table[info->tsearch].name == 'd' ||
+			g_spec_table[info->tsearch].name == 'i')
 		ft_printfspecify(list, info, pass);
 	else if (g_spec_table[info->tsearch].name == 'u')
 		ft_printfspecify1(list, info, pass);
-	else if (format[info->i] == g_spec_table[info->tsearch].name && g_spec_table[info->tsearch].name != '\0')
+	else if (format[info->i] == g_spec_table[info->tsearch].name &&
+			g_spec_table[info->tsearch].name != '\0')
 		g_spec_table[info->tsearch].function(list, info, pass);
 	else
 		ft_putchar(format[info->i]);
 	info->i++;
 }
 
-/*static void		search_width(va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
-{
-	if (info->x >= 1)
-		return ;
-	if (format[info->i] >= '1' && format[info->i] <= '9')
-	{
-		pass->width = ft_atoi(format + info->i);
-		while (format[info->i] >= '0' && format[info->i] <= '9')
-			info->i++;
-		search_specs(list, format, info, pass);
-	}
-	spec_table(list, format, info, pass);
-}*/
-
-void 	search_specs(va_list *list, const char *format, t_inputinfo *info, t_passinfo *pass)
+void			search_specs(va_list *list, const char *format,
+		t_inputinfo *info, t_passinfo *pass)
 {
 	info->tsearch = 0;
 	info->cast = 0;
-	while (format[info->i] != g_cast_table[info->cast].name && g_cast_table[info->cast].name != '\0')
+	while (format[info->i] != g_cast_table[info->cast].name &&
+			g_cast_table[info->cast].name != '\0')
 		info->cast++;
-		if (format[info->i] == g_cast_table[info->cast].name && g_cast_table[info->cast].name != '\0')
-		{
-			info->flag[info->f] = format[info->i];
-			info->f++;
-			info->i++;
-			search_specs(list, format, info, pass);
-			info->x = 1;
-		}
-	while (format[info->i] != g_flag_table[info->tsearch].name && g_flag_table[info->tsearch].name != '\0')
+	if (format[info->i] == g_cast_table[info->cast].name &&
+			g_cast_table[info->cast].name != '\0')
+	{
+		info->flag[info->f] = format[info->i];
+		info->f++;
+		info->i++;
+		search_specs(list, format, info, pass);
+		info->x = 1;
+	}
+	while (format[info->i] != g_flag_table[info->tsearch].name &&
+			g_flag_table[info->tsearch].name != '\0')
 		info->tsearch++;
-		if (format[info->i] == g_flag_table[info->tsearch].name && g_flag_table[info->tsearch].name != '\0')
-		{
-			info->flag[info->f] = format[info->i];
-			info->f++;
-			info->i++;
-			search_specs(list, format, info, pass);
-			info->x = 1;
-		}
-		search_width(list, format, info, pass);
+	if (format[info->i] == g_flag_table[info->tsearch].name &&
+			g_flag_table[info->tsearch].name != '\0')
+	{
+		info->flag[info->f] = format[info->i];
+		info->f++;
+		info->i++;
+		search_specs(list, format, info, pass);
+		info->x = 1;
+	}
+	search_width(list, format, info, pass);
 }
 
 /*
@@ -162,18 +137,17 @@ static void		reset(t_inputinfo *info, t_passinfo *pass)
 	info->p = 0;
 }
 
-int		ft_printf(const char *format, ...)
+int				ft_printf(const char *format, ...)
 {
-	va_list list;
-	t_passinfo 	pass;
+	va_list		list;
+	t_passinfo	pass;
 	t_inputinfo input;
 
 	initialize_it_all(&pass, &input);
-		
 	va_start(list, format);
 	while (format[input.i] != '\0')
 	{
-	if(format[input.i] == '%')
+		if (format[input.i] == '%')
 		{
 			input.i++;
 			input.search = format[input.i];
@@ -188,7 +162,6 @@ int		ft_printf(const char *format, ...)
 		}
 	}
 //	ft_putstr(format, &input, &pass);
-//	ft_putnbr(final_count, &input, &pass);
-	va_end (list);
+	va_end(list);
 	return (pass.final_count);
 }

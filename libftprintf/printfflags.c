@@ -6,14 +6,11 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 00:13:59 by msharpe           #+#    #+#             */
-/*   Updated: 2018/01/31 11:57:04 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/02 20:37:10 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-#include <stdio.h>
-
-
 
 void			ft_flag_plus(long n, t_inputinfo *info, t_passinfo *pass)
 {
@@ -24,14 +21,12 @@ void			ft_flag_plus(long n, t_inputinfo *info, t_passinfo *pass)
 	}
 	info->swi++;
 	pass->final_count++;
-	
 }
 
 void			ft_flag_space(long n, t_inputinfo *info, t_passinfo *pass)
 {
 	if (n > 0 && info->swi == 0)
 	{
-	//	printf("Numlen value at start of space 1st half:%d", pass->numlen); 
 		ft_putchar(' ');
 		pass->numlen++;
 		info->swi = 1;
@@ -39,7 +34,6 @@ void			ft_flag_space(long n, t_inputinfo *info, t_passinfo *pass)
 	}
 	else if (info->swi == 2)
 	{
-	//	printf("Numlen value at start of 2nd half:%d", pass->numlen);
 		while (pass->numlen < pass->width)
 		{
 			ft_putchar(' ');
@@ -105,6 +99,6 @@ void			ft_flag_hash(long n, t_inputinfo *info, t_passinfo *pass)
 	{
 		ft_putstr("0X", info, pass);
 		pass->final_count += 2;
-	}	
+	}
 	n = n * 1;
 }

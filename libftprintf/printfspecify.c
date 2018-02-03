@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/29 13:01:59 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/02 12:57:37 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/02 20:39:15 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void		ft_printfspecify(va_list *list, t_inputinfo *info, t_passinfo *pass)
 	int q;
 
 	if ((q = ft_strstr((info->flag), "hh")) && q == 1)
-		ft_putnbr(((signed char)(va_arg(*list, int))), info, pass);	
+		ft_putnbr(((signed char)(va_arg(*list, int))), info, pass);
 	else if ((q = ft_strstr((info->flag), "h")) && q == 1)
 		ft_putnbr(((short int)(va_arg(*list, int))), info, pass);
 	else if ((q = ft_strstr((info->flag), "ll")) && q == 1)
@@ -32,12 +32,13 @@ void		ft_printfspecify(va_list *list, t_inputinfo *info, t_passinfo *pass)
 		ft_per_doi(list, info, pass);
 }
 
-void		ft_printfspecify1(va_list *list, t_inputinfo *info, t_passinfo *pass)
+void		ft_printfspecify1(va_list *list, t_inputinfo *info,
+		t_passinfo *pass)
 {
 	int q;
 
 	if ((q = ft_strstr((info->flag), "hh")) && q == 1)
-		ft_putnbrup(((unsigned char)(va_arg(*list, int))), info, pass);	
+		ft_putnbrup(((unsigned char)(va_arg(*list, int))), info, pass);
 	else if ((q = ft_strstr((info->flag), "h")) && q == 1)
 		ft_putnbrup(((unsigned short int)(va_arg(*list, int))), info, pass);
 	else if ((q = ft_strstr((info->flag), "ll")) && q == 1)

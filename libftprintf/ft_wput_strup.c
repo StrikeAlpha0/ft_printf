@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_hex.c                                     :+:      :+:    :+:   */
+/*   ft_wput_strup.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/06 22:37:57 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/02 20:35:15 by msharpe          ###   ########.fr       */
+/*   Created: 2018/02/02 16:38:50 by msharpe           #+#    #+#             */
+/*   Updated: 2018/02/02 21:49:56 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int		ft_print_hex(unsigned long nbr, t_inputinfo *info, t_passinfo *pass)
+void		ft_wputchar(wchar_t c)
 {
-	char *hex;
-	char i;
-	
-	if (info->flag[info->f] == '#' && info->hexswi == 0)
-	{
-		pass->strlen = -2;
-		ft_flag_hash(nbr, info, pass);
-		info->hexswi = 1;
-	}
+	write(1, &c, 1);
+}
+
+void		ft_wput_strup(wchar_t *s)
+{
+	int i;
+
 	i = 0;
-	hex = "0123456789abcdef";
-	if (nbr >= 16)
-		ft_print_hex((nbr / 16), info, pass);
-	i = nbr % 16;
-	write(1, hex + i, 1);
-	pass->final_count++;
-	return (nbr);
+	while (s + i != NULL && *(s + i) != '\0')
+	{
+		ft_wputchar(*(s + i));
+		i++;
+		pass->final_count++;
+	}
 }
