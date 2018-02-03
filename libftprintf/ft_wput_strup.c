@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/02 16:38:50 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/02 21:49:56 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/02 23:44:13 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ void		ft_wput_strup(wchar_t *s)
 	{
 		ft_wputchar(*(s + i));
 		i++;
-		pass->final_count++;
 	}
 }

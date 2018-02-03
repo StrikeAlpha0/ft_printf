@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 18:06:27 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/02 23:34:12 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/02 23:46:54 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,5 +151,7 @@ void			spec_table(va_list *list, const char *format,
 void			ft_printfspecify(va_list *list, t_inputinfo *info,
 		t_passinfo *pass);
 void			ft_printfspecify1(va_list *list, t_inputinfo *info,
+		t_passinfo *pass);
+void			ft_checkpoint(va_list *list, t_inputinfo *info, 
 		t_passinfo *pass);
 #endif
