@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/02 23:08:46 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/02 23:28:02 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ void		spec_table(va_list *list, const char *format,
 		ft_printfspecify(list, info, pass);
 	else if (g_spec_table[info->tsearch].name == 'u')
 		ft_printfspecify1(list, info, pass);
+	else if (g_spec_table[info->tsearch].name == 's')
+		ft_checkpoint(list, info, pass);
 	else if (format[info->i] == g_spec_table[info->tsearch].name &&
 			g_spec_table[info->tsearch].name != '\0')
 		g_spec_table[info->tsearch].function(list, info, pass);
@@ -145,7 +147,7 @@ int				ft_printf(const char *format, ...)
 
 	initialize_it_all(&pass, &input);
 	va_start(list, format);
-/*	while (format[input.i] != '\0')
+	while (format[input.i] != '\0')
 	{
 		if (format[input.i] == '%')
 		{
@@ -160,8 +162,8 @@ int				ft_printf(const char *format, ...)
 			input.i++;
 			pass.final_count++;
 		}
-	}*/
-	ft_putstr(format, &input, &pass);
+	}
+//	ft_putstr(format, &input, &pass);
 	va_end(list);
 	return (pass.final_count);
 }
