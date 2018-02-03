@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/02 22:59:53 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/02 23:08:46 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,7 +145,7 @@ int				ft_printf(const char *format, ...)
 
 	initialize_it_all(&pass, &input);
 	va_start(list, format);
-	while (format[input.i] != '\0')
+/*	while (format[input.i] != '\0')
 	{
 		if (format[input.i] == '%')
 		{
@@ -160,8 +160,8 @@ int				ft_printf(const char *format, ...)
 			input.i++;
 			pass.final_count++;
 		}
-	}
-//	ft_putstr(format, &input, &pass);
+	}*/
+	ft_putstr(format, &input, &pass);
 	va_end(list);
 	return (pass.final_count);
 }
