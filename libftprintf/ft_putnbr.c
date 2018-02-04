@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 19:29:01 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/04 10:36:18 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/04 11:12:12 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,18 @@ void		ft_putnbr(long n, t_inputinfo *info, t_passinfo *pass)
   	while (info->flag[info->f] != '-' && info->flag[info->f] != '\0' &&
   			info->flag[info->f] != '0')
   		info->f++;
-	printf("Precision = %d, Width = %d\n", info->precision, pass->width);
+//	printf("Precision = %d, Width = %d\n", info->precision, pass->width);
+
 	if (info->precision > 0)
 	{
 		if (info->precision > pass->width)
 			pass->width = info->precision;
+		if (info->precision == pass->width)
+			if (ft_strstr((info->flag), " ") == 1)
+			{
+				pass->numlen--;
+				ft_flag_zero(n, info, pass);
+			}
  		if (info->flag[info->f] == '\0' && pass->numlen < pass->width && pass->width > info->precision)
   		{
   			info->swi = 2;
@@ -42,7 +49,9 @@ void		ft_putnbr(long n, t_inputinfo *info, t_passinfo *pass)
 			}
 		}
 	}
- 	else if (info->flag[info->f] == '\0' && pass->numlen < pass->width && info->precision > pass->width)
+
+
+	else if (info->flag[info->f] == '\0' && pass->numlen < pass->width && info->precision > pass->width)
  	{
  		pass->width = info->precision;
 		pass->numlen--;
