@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 19:29:01 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/04 11:21:37 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/04 11:23:24 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ void		ft_putnbr(long n, t_inputinfo *info, t_passinfo *pass)
 	{
 		if (info->precision > pass->width)
 			pass->width = info->precision;
-/**//*	if (info->precision == pass->width)
+/**/	if (info->precision == pass->width)
 		{
 			if (ft_strstr((info->flag), " ") == 1)
 			{
 				pass->numlen--;
 				ft_flag_zero(n, info, pass);
 			}
-		}*/
+		}
  		else if ((pass->width - info->precision) > 0 )
 		{
 			while((pass->width - info->precision) > 0)
