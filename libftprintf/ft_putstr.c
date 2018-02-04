@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/05 22:42:31 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/02 22:49:38 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/03 21:11:36 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	ft_putstr(char const *s, t_inputinfo *info, t_passinfo *pass)
 		{
 			ft_putchar(' ');
 			i++;
+			pass->final_count++;
 		}
 	}
 	if ((q = ft_strstr((info->flag), "-")) && q == 1)

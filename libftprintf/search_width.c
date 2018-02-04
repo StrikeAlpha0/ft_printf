@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 21:20:40 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/02 22:57:05 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/03 02:22:00 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ void		search_precision(va_list *list, const char *format,
 		return ;
 	if (format[info->i] >= '1' && format[info->i] <= '9')
 	{
-		if (info->y == 1)
-			info->precision = ft_atoi(format + info->i);
+		info->precision = ft_atoi(format + info->i);
 		while (format[info->i] >= '0' && format[info->i] <= '9')
 			info->i++;
 	}
