@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 19:29:01 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/03 23:50:46 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/03 23:52:38 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 void		ft_putnbr(long n, t_inputinfo *info, t_passinfo *pass)
 {
-	int q;
 	info->swi = 0;
 	info->f = 0;
 	info->z = 1;
@@ -31,9 +30,7 @@ void		ft_putnbr(long n, t_inputinfo *info, t_passinfo *pass)
 		info->swi = 3;
 	}
 	else if (pass->width > info->precision && info->precision != 0) 
-	{
 		pass->width = info->precision;
-
 	printf("AFTER:The value of precision is:%d, and width is %d, and info->f is:%c\n", info->precision, pass->width, info->flag[info->f+1]);
 	if (info->swi == 3 && pass->numlen < pass->width)
 	{
