@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 19:29:01 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/04 01:10:21 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/04 01:11:53 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void		ft_putnbr(long n, t_inputinfo *info, t_passinfo *pass)
 	info->f = 0;
 	info->z = 1;
 	ft_frontloadflag(n, info, pass);
-	printf("OOOH NUMLEN:%d\n", pass->numlen);
+//	printf("OOOH NUMLEN:%d\n", pass->numlen);
 	info->f = 0;
 	while (info->flag[info->f] != '-' && info->flag[info->f] != '\0' &&
 			info->flag[info->f] != '0')
