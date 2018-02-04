@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 19:29:01 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/04 11:12:12 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/04 11:15:00 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void		ft_putnbr(long n, t_inputinfo *info, t_passinfo *pass)
 	{
 		if (info->precision > pass->width)
 			pass->width = info->precision;
-		if (info->precision == pass->width)
+/**/	if (info->precision == pass->width)
 			if (ft_strstr((info->flag), " ") == 1)
 			{
 				pass->numlen--;
@@ -51,12 +51,12 @@ void		ft_putnbr(long n, t_inputinfo *info, t_passinfo *pass)
 	}
 
 
-	else if (info->flag[info->f] == '\0' && pass->numlen < pass->width && info->precision > pass->width)
+/*	else if (info->flag[info->f] == '\0' && pass->numlen < pass->width && info->precision > pass->width)
  	{
  		pass->width = info->precision;
 		pass->numlen--;
  		ft_flag_zero(n, info, pass);
- 	}
+ 	}*/
   	ft_midloadflag(n, info, pass);
   	if (n < 0)
   		n = -n;
