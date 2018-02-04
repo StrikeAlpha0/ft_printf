@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/05 22:42:31 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/03 21:11:36 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/03 21:17:29 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_putstr(char const *s, t_inputinfo *info, t_passinfo *pass)
 			info->p++;
 			pass->final_count++;
 		}
-		while (i < pass->width)
+		while (i < pass->width - 1)
 		{
 			ft_putchar(' ');
 			i++;
