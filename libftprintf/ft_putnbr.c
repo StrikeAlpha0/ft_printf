@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 19:29:01 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/03 23:49:18 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/03 23:50:46 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,23 @@ void		ft_putnbr(long n, t_inputinfo *info, t_passinfo *pass)
 			info->flag[info->f] != '0')
 		info->f++;
 	printf("BEFORE:The value of precision is:%d, and width is %d, and info->f is:%c\n", info->precision, pass->width, info->flag[info->f+1]);
-	q = pass->width - info->precision;
 	if (info->precision > pass->width && info->precision != 0)
 	{
 		pass->width = info->precision;
 		info->swi = 3;
 	}
 	else if (pass->width > info->precision && info->precision != 0) 
+	{
 		pass->width = info->precision;
 
-	printf("AFTER:The value of precision is:%d, and width is %d, and info->f is:%c and info->swi is: %d\n", info->precision, pass->width, info->flag[info->f+1], info->swi);
+	printf("AFTER:The value of precision is:%d, and width is %d, and info->f is:%c\n", info->precision, pass->width, info->flag[info->f+1]);
 	if (info->swi == 3 && pass->numlen < pass->width)
 	{
 		info->swi = 2;
-		while (q > 0)
+		while (info->precision < pass->width)
 		{
 			ft_putchar(' ');
-			q--;
+			info->precision++;
 		}
 		ft_flag_space(n, info, pass);
 	}
