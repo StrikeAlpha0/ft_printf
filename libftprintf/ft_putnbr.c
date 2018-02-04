@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 19:29:01 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/04 00:44:39 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/04 00:53:02 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,18 @@ void		ft_putnbr(long n, t_inputinfo *info, t_passinfo *pass)
 	q = pass->width - info->precision;
 	if (info->precision > pass->width)
 		pass->width = info->precision;
-	if (info->flag[info->f] == '\0' && pass->numlen < pass->width && pass->width > info->precision)
+	if (info->flag[info->f] == '\0' && pass->numlen < pass->width && pass->width > info->precision && info->precision != 0)
 	{
-		printf("The value of q is:%d", q);
+//		printf("The value of q is:%d", q);
 		while (q > 0)
 		{
 			ft_putchar(' ');
 			pass->final_count++;
+			pass->numlen++;
 			q--;
 		}
-		printf("A: The value of pass->width is %d", pass->width);
+//		pass->width = info->precision;
+//		printf("A: The value of pass->width is %d", pass->width);
 		ft_flag_zero(n, info, pass);
 	}
 	else if (info->flag[info->f] == '\0' && pass->numlen < pass->width && info->precision == pass->width)
@@ -44,11 +46,11 @@ void		ft_putnbr(long n, t_inputinfo *info, t_passinfo *pass)
 		pass->width = info->precision;
 		pass->numlen = pass->numlen - 1;
 		ft_flag_zero(n, info, pass);
-		printf("B");
+//		printf("B");
 	}
 	else if (info->flag[info->f] == '\0' && pass->numlen < pass->width && q > 0)
 	{
-		printf("The value of q is:%d", q);
+//		printf("C DEEZ The value of q is:%d", q);
 		while (q > 0)
 		{
 			ft_putchar(' ');
