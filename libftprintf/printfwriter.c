@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 23:09:03 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/02 23:50:32 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/04 23:51:04 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,8 @@ void		ft_per_supr(va_list *list, t_inputinfo *info, t_passinfo *pass)
 	ft_putstrup((char *)va_arg(*list, wchar_t *), info, pass);
 }
 
-void		ft_checkpoint(va_list *list, t_inputinfo *info, t_passinfo *pass)
+void		ft_per_q(va_list *list, t_inputinfo *info, t_passinfo *pass)
 {
-	int q;
-
-	if ((q = ft_strstr((info->flag), "l")) && q == 1)
-		ft_wput_strup(va_arg(*list, wchar_t *));
-	else	
-		ft_per_s(list, info, pass);
+	pass->numlen = -1;
+	ft_cryptoputstr(va_arg(*list, char *), info, pass);
 }

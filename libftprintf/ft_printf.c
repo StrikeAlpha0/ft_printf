@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/02 23:28:02 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/05 00:31:29 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@
 ** U:unsigned long int, o:octal conversion, O:long octal conversion,
 ** x:lowercase hex X:uppercase hex, c:print char, C:print wide char,
 ** s:print string, S:print wide string, p:print address, %:print a %
+*/
+
+/*
+** use atoi to use 0;0;0m format for 256 color support
 */
 
 t_printf_struct g_spec_table[] =
@@ -36,7 +40,9 @@ t_printf_struct g_spec_table[] =
 	{'s', ft_per_s},
 	{'S', ft_per_s},
 	{'p', ft_per_p},
-	{'%', ft_per_per}
+	{'%', ft_per_per},
+	{'q', ft_per_q},
+	{'k', ft_per_k}
 };
 /*
 ** Suffix addition of spaces, prefix addition of +/-, prefix:space,
@@ -95,9 +101,7 @@ void			search_specs(va_list *list, const char *format,
 	if (format[info->i] == g_cast_table[info->cast].name &&
 			g_cast_table[info->cast].name != '\0')
 	{
-		info->flag[info->f] = format[info->i];
-		info->f++;
-		info->i++;
+		info->flag[info->f++] = format[info->i--];
 		search_specs(list, format, info, pass);
 		info->x = 1;
 	}
@@ -107,21 +111,40 @@ void			search_specs(va_list *list, const char *format,
 	if (format[info->i] == g_flag_table[info->tsearch].name &&
 			g_flag_table[info->tsearch].name != '\0')
 	{
-		info->flag[info->f] = format[info->i];
-		info->f++;
-		info->i++;
+		info->flag[info->f++] = format[info->i++];
 		search_specs(list, format, info, pass);
 		info->x = 1;
 	}
 	search_width(list, format, info, pass);
 }
 
-/*
-static void		special_mod(.........)
+static void		ft_colors(const char *format, t_inputinfo *info,
+		t_passinfo *pass)
 {
+	char	*s;
+	int		q;
 
+	q = 0;
+	if ((q = ft_strstr(format, "red")) && q == 1)
+		ft_putstrup("\x1b[31m", info, pass);
+	else if ((q = ft_strstr(format, "green")) && q == 1)
+		ft_putstrup("\x1b[32m", info, pass);
+	else if ((q = ft_strstr(format, "yellow")) && q == 1)
+		ft_putstrup("\x1b[33m", info, pass);
+	else if ((q = ft_strstr(format, "blue")) && q == 1)
+		ft_putstrup("\x1b[34m", info, pass);
+	else if ((q = ft_strstr(format, "magenta")) && q == 1)
+		ft_putstrup("\x1b[35m", info, pass);
+	else if ((q = ft_strstr(format, "cyan")) && q == 1)
+		ft_putstrup("\x1b[36m", info, pass);
+	else if ((q = ft_strstr(format, "white")) && q == 1)
+		ft_putstrup("\x1b[37m", info, pass);
+	else if ((q = ft_strstr(format, "secret")) && q == 1)
+		ft_putstrup("\x1b[30m", info, pass);
+	while (format[info->i] != '\0' && format[info->i] != '}')
+		info->i++;
+	info->i++;
 }
-*/
 
 static void		reset(t_inputinfo *info, t_passinfo *pass)
 {
@@ -149,6 +172,8 @@ int				ft_printf(const char *format, ...)
 	va_start(list, format);
 	while (format[input.i] != '\0')
 	{
+		if (format[input.i] == '{')
+			ft_colors(format, &input, &pass);
 		if (format[input.i] == '%')
 		{
 			input.i++;
@@ -158,12 +183,10 @@ int				ft_printf(const char *format, ...)
 		}
 		else
 		{
-			ft_putchar(format[input.i]);
-			input.i++;
+			ft_putchar(format[input.i++]);
 			pass.final_count++;
 		}
 	}
-//	ft_putstr(format, &input, &pass);
 	va_end(list);
 	return (pass.final_count);
 }
