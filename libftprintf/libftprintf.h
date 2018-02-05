@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/13 18:06:27 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/05 00:17:18 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/05 12:15:43 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,12 +82,12 @@ void			ft_putstrrot13(char const *s, t_inputinfo *info,
 		t_passinfo *pass);
 void			ft_putchar(unsigned char c);
 void			ft_putcharrot(unsigned char c);
-void			ft_wputchar(wchar_t c);
-void			ft_wput_strup(wchar_t *s);
-void			ft_wput_str(wchar_t s, t_inputinfo *info, t_passinfo *pass);
-void			ft_wputstr(wchar_t const *s, t_inputinfo *info,
-		t_passinfo *pass);
-size_t			ft_wstrlen(wchar_t const *s);
+//void			ft_wputchar(wchar_t c);
+//void			ft_wput_strup(wchar_t *s);
+//void			ft_wput_str(wchar_t s, t_inputinfo *info, t_passinfo *pass);
+//void			ft_wputstr(wchar_t const *s, t_inputinfo *info,
+//		t_passinfo *pass);
+//size_t			ft_wstrlen(wchar_t const *s);
 int				ft_strstr(const char *haystack, const char *needle);
 size_t				ft_strlen(const char *s);
 void			ft_putnbrup(unsigned long n, t_inputinfo *info,
@@ -133,7 +133,7 @@ void			ft_per_c(va_list *list, t_inputinfo *info, t_passinfo *pass);
 void			ft_per_per(va_list *list, t_inputinfo *info, t_passinfo *pass);
 void			ft_per_supr(va_list *list, t_inputinfo *info, t_passinfo *pass);
 void			ft_per_q(va_list *list, t_inputinfo *info, t_passinfo *pass);
-void			ft_per_k(va_list *list, t_inputinfo *info, t_passinfo *pass);
+//void			ft_per_k(va_list *list, t_inputinfo *info, t_passinfo *pass);
 
 /*
 ** numbers
