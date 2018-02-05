@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/05 00:31:29 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/05 00:49:45 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,6 @@ void			search_specs(va_list *list, const char *format,
 static void		ft_colors(const char *format, t_inputinfo *info,
 		t_passinfo *pass)
 {
-	char	*s;
 	int		q;
 
 	q = 0;
