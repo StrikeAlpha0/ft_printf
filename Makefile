@@ -6,7 +6,7 @@
 #    By: msharpe <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/21 13:37:09 by msharpe           #+#    #+#              #
-#    Updated: 2018/02/05 12:16:33 by msharpe          ###   ########.fr        #
+#    Updated: 2018/02/05 15:06:32 by msharpe          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ FILENAMES	= ft_atoi.c ft_bzero.c ft_numlen.c ft_print_hex.c ft_print_hexup.c\
 				printfflags.c printfnumbers.c printfwriter.c printfsystem.c\
 				ft_frontloadflag.c ft_midloadflag.c ft_backloadflag.c\
 				printfspecify.c ft_strstr.c ft_strlen.c search_width.c\
-				printfmulti.c ft_putstrup.c ft_cryptoputstr.c\
-				ft_putstrrot13.c
+				printfmulti.c ft_putstrup. ft_cryptoputstr.c ft_wstrlen\
+				ft_putstrrot13.c ft_wput_strup.c ft_wputstr.c
 				  
 
 NAME		= libftprintf.a

@@ -6,13 +6,12 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/05 12:56:39 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/05 14:26:07 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 #include "libftprintf.h"
-#include <stdio.h>
 
 /*
 ** Table: d:print int digits, D:long ints, i:print int digits, u:unsigned int
@@ -103,7 +102,6 @@ void			search_specs(va_list *list, const char *format,
 			g_cast_table[info->cast].name != '\0')
 	{
 		info->flag[info->f++] = format[info->i++];
-		printf("Flag container contains:%s\n", info->flag);
 		search_specs(list, format, info, pass);
 		info->x = 1;
 	}
