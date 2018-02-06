@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:53:12 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/05 14:26:07 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/05 16:59:25 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ t_printf_struct g_spec_table[] =
 	{'p', ft_per_p},
 	{'%', ft_per_per},
 	{'q', ft_per_q},
-//	{'k', ft_per_k}
+	{'k', ft_per_k}
 };
 /*
 ** Suffix addition of spaces, prefix addition of +/-, prefix:space,
