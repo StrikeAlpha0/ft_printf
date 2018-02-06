@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 22:37:57 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/04 17:04:43 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/05 16:57:24 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void		ft_base64(unsigned char *c, int size)
 	int i;
 	char *key;
 	int in[3];
-   	int out[4];	
-	int *num;
+	int out[4];
+	int num;
 
 	key = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 	in[0] = c[0];
@@ -28,23 +28,19 @@ void		ft_base64(unsigned char *c, int size)
 	num = in[0] << 16;
 	num |= in[1] << 8;
 	num |= in[2] << 0;
+	i = 4;
+	while (i--)
+	{
+		out[i] = key[num % 64];
+		num /= 64;
+	}
 	i = 0;
 	while (i < 4)
 	{
-		out[4 - i++] = key[num % 64];
-		num /= 64;
-		write(1, key + out[i], 1); /*fd, dfsdfd, 1 for actual ssl project*/
-		if (size < 2 || size < 3)
-			if out[i] == 0;
-
+		if (size < i)
+			write(1, "=", 1);
+		else
+			write(1, &out[i], 1);
+		i++;
 	}
-	return (c);
-}
-
-int		main()
-{
-	unsigned char *c = "Is this going to work?";
-	int size = 22;
-
-	ft_base64(c, size);
 }

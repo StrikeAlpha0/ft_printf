@@ -6,7 +6,7 @@
 /*   By: msharpe <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 13:30:32 by msharpe           #+#    #+#             */
-/*   Updated: 2018/02/04 18:22:26 by msharpe          ###   ########.fr       */
+/*   Updated: 2018/02/05 12:55:23 by msharpe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ int main()
 //	int test = 0;
 	int q = 42;
 //	char *q = "LYDI";
-	char *a = "pouet pouet camembert";
-	char *b = "cbhrg0cbhrg0pnzrzoreg";
+//	char *a = "pouet pouet camembert";
+//	char *b = "cbhrg0cbhrg0pnzrzoreg";
 //	char *b = "Ceci n'est pas un  ";
 //	char *c = "Ceci n'est toujours pas un exercice ";
 /*	char *d = "Lesenfantsnesententpastrestresbonmaiscac'estparcequ'ilsfontcacadansleurculotteetquecen'estvraimentpastrestrespropreNonmongroscoupdecœurc'étaitunsoirde2005,j'étaisinvitéàuneconférenceàLaSorbonnepourparlerdelachansonfrancaiseetdel'écrituredetexteavecpleinsd'autresgens.ParmilesstarsémergentesilyavaitOliviaRuizquietaitentraindedevenirunestaravecsachansonsurlechocolatàlacon.Brefjeelretrouvecoincélorsd'une";*/
@@ -58,7 +58,7 @@ int main()
 //	ft_printf("%s\n", q);
 //	ft_printf("%s\n %s\n %s\n %s\n", a, b, c, d);
 //	printf("chars counted = %d\n", printf("%s", a));
-	printf("chars counted = %d\n", ft_printf("{red}%q", a));
-	printf("chars counted = %d\n", ft_printf("{blue}%q", b));
+	printf("chars counted = %d\n", ft_printf("%ll4d", q));
+	printf("chars counted = %d\n", ft_printf("%h04d", q));
 	return (0);
 }
